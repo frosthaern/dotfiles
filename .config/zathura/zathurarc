@@ -1,0 +1,56 @@
+# font
+set font "MartianMono NFM Cond Med 12"
+
+# database
+set database sqlite
+
+# highlight-color
+set highlight-color "#5555500"
+
+# General settings
+set sandbox none
+set statusbar-h-padding 5
+set statusbar-v-padding 5
+set page-padding 1
+set selection-clipboard clipboard
+
+# Color settings
+set default-bg "#000000"
+set default-fg "#FFFFFF"
+set statusbar-bg "#000000"
+set statusbar-fg "#FFFFFF"
+
+# Key mappings
+map u scroll half-up
+map d scroll half-down
+map D toggle_page_mode
+map r reload
+map R rotate
+
+# Zoom settings
+set zoom-min 10
+set zoom-max 1000
+set zoom-step 10
+
+# Search settings
+set incremental-search true
+set search-hadjust true
+
+# Window title
+set window-title-basename true
+set window-title-page true
+
+# Scroll settings
+set scroll-page-aware true
+set scroll-full-overlap 0.01
+set scroll-step 100
+
+# Visibility of UI elements
+set show-hidden true
+set show-directories true
+set show-recent 10
+
+# Rendering options
+set render-loading true
+set adjust-open width
+
