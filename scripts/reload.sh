@@ -3,5 +3,6 @@
 
 killall waybar
 killall swaync
+swaymsg reload
 waybar &
 swaync &

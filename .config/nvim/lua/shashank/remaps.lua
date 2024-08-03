@@ -6,16 +6,17 @@ vim.keymap.set("n", "<leader>la", ":Lazy<CR>")
 vim.keymap.set("n", "<leader>dir", vim.cmd.Ex)
 
 --its like vim-tmux-navigator and shit
-
 -- vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
 -- vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
 -- vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
 -- vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
+-- don't use the above keybindings
 
 --tabbing and terminaling
-vim.keymap.set("n", "<C-t>", ":tabnew<CR>:terminal<CR>")
-vim.keymap.set("n", "<C-l>", ":tabnext<CR>")
-vim.keymap.set("n", "<C-c>", ":close<CR>")
+vim.keymap.set("n", "<C-t>", ":tabnew<CR>", { desc = "create a new tab and make a terminal out of it" })
+vim.keymap.set("n", "<C-j>", ":tabnext<CR>", { desc = "move to next tab" })
+vim.keymap.set("n", "<C-k>", ":tabprevious<CR>", { desc = "move to previous tab" })
+vim.keymap.set("n", "<C-c>", ":close<CR>", { desc = "close current tab" })
 
 
 --resizing for splits

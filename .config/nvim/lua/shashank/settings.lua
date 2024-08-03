@@ -14,13 +14,10 @@ vim.opt.undofile = true
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 vim.opt.signcolumn = "yes"
-vim.opt.cursorline = true
 vim.opt.updatetime = 50
 vim.opt.colorcolumn = "1000"
-vim.opt.termguicolors = true
 vim.o.scrolloff = 10
-vim.cmd([[colorscheme carbonfox]])
-vim.g.have_nerd_font = false
+vim.g.have_nerd_font = true
 vim.opt.mouse = "a"
 vim.opt.showmode = false
 vim.opt.breakindent = true
@@ -41,4 +38,3 @@ vim.g.vimwiki_list = { {
 	syntax = "markdown",
 	ext = "md",
 } }
-vim.opt.guicursor = 'n-v-c-i:block-Cursor'

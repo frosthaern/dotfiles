@@ -138,8 +138,9 @@
             "critical": 15
         },
         "format": "{capacity}% {icon}",
+        "format-time": "{m}",
         "format-full": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
+        "format-charging": "{capacity}% 󰂄",
         "format-plugged": "{capacity}% ",
         "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
@@ -149,8 +150,10 @@
     "battery#bat2": {
         "bat": "BAT2"
     },
+
+    // power profiles daemon shit
     "power-profiles-daemon": {
-      "format": "{icon}",
+      "format": "{profile} {icon}",
       "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
       "tooltip": true,
       "format-icons": {

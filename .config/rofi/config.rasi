@@ -2,7 +2,7 @@ configuration {
   modes: "run,drun,window";
   width: 50;
   lines: 15;
-  font: "MartianMono NFM Cond Med 12";
+  font: "JetBrainsMono NFM Bold 12";
   yoffset: 10;
   xoffset: 10;
   fixed-num-lines: true;

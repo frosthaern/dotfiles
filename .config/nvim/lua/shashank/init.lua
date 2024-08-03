@@ -1,7 +1,6 @@
 require("shashank.plugins")
 require("shashank.settings")
 require("shashank.lsp_shit")
---require("shashank.statusline")
 require("shashank.treeshitter")
 require("shashank.telescope")
 require("shashank.auto_commands")
