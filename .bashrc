@@ -59,6 +59,10 @@ alias update='sudo pacman -Syu; paru -Syu'
 alias zf='zathura ~/$(fzf)'
 alias think='nvim think.md'
 
+# pacman commands
+alias ps='pacman -Ss'
+alias pi='sudo pacman -Sy'
+
 # Important system aliases
 alias gmute='pamixer --get-mute'
 alias batt='acpi -b'
@@ -114,3 +118,5 @@ ffall() {
         echo '--------------------------------------------------------------------------------------------'
     done
 }
+
+[ -f "/home/sns/.ghcup/env" ] && . "/home/sns/.ghcup/env" # ghcup-env

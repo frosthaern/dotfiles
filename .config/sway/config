@@ -18,7 +18,7 @@ set $up k
 set $right l
 set $term kitty
 set $font JetBrainsMono Nerd Font
-set $menu rofi -show drun
+set $menu rofi -show run
 set $lock swaylock -i $wallpaper
 
 # setting font
