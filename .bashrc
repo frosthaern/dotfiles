@@ -1,4 +1,4 @@
-    fastfetch -c /usr/share/fastfetch/presets/examples/10.jsonc
+fastfetch
 #
 # ~/.bashrc
 #
