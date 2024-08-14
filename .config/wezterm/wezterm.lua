@@ -3,8 +3,9 @@ local config = wezterm.config_builder()
 config.enable_wayland = false
 
 -- font
-config.font = wezterm.font("JetBrainsMono NFM Bold", { italic = false })
-config.font_size = 15.0
+config.font = wezterm.font("JetBrainsMono Nerd Font Mono", { weight = "Bold", stretch = "Normal", style = "Italic" })
+
+config.font_size = 13.0
 
 --colorscheme
 config.color_scheme = "carbonfox"

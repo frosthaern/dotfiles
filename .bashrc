@@ -1,4 +1,3 @@
-fastfetch
 #
 # ~/.bashrc
 #
@@ -62,6 +61,8 @@ alias think='nvim think.md'
 # pacman commands
 alias ps='pacman -Ss'
 alias pi='sudo pacman -Sy'
+alias pas='paru -Ss'
+alias pai='paru -S'
 
 # Important system aliases
 alias gmute='pamixer --get-mute'
@@ -107,7 +108,7 @@ eval "$(zoxide init bash)"
 export XDG_CURRENT_DESKTOP="sway"
 
 ff() {
-    fastfetch -c /usr/share/fastfetch/presets/examples/$1.jsonc
+    fastfetch
 }
 
 ffall() {
@@ -120,3 +121,5 @@ ffall() {
 }
 
 [ -f "/home/sns/.ghcup/env" ] && . "/home/sns/.ghcup/env" # ghcup-env
+eval "$(starship init bash)"
+. "$HOME/.cargo/env"

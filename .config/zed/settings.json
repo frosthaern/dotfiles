@@ -7,18 +7,19 @@
 // custom settings, run the `zed: Open Default Settings` command
 // from the command palette
 {
-  "base_keymap": "VSCode",
-  "vim_mode": true,
-  "ui_font_size": 15,
-  "buffer_font_size": 15,
-  "ui_font_family": "GeistMonoNF-Bold",
-  "ui_font_weight": 100,
-  "buffer_font_family": "GeistMonoNF-Bold",
-  "buffer_line_height": "comfortable",
-  "buffer_font_weight": 600,
-  "theme": {
-    "mode": "dark",
-    "light": "Rosé Pine",
-    "dark": "Summercamp"
-  }
+    "base_keymap": "VSCode",
+    "vim_mode": true,
+    "ui_font_size": 15,
+    "buffer_font_size": 15,
+    "ui_font_family": "JetBrains Mono",
+    "ui_font_weight": 100,
+    "buffer_font_family": "JetBrains Mono",
+    "buffer_line_height": "comfortable",
+    "tab_size": 2,
+    "buffer_font_weight": 600,
+    "theme": {
+        "mode": "dark",
+        "light": "Rosé Pine",
+        "dark": "Ayu Dark"
+    }
 }

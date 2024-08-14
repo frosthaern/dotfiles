@@ -62,10 +62,7 @@ bindsym XF86MonBrightnessDown exec brightnessctl s 5%-
 bindsym XF86MonBrightnessUp exec brightnessctl s +5%
 
 # my personal bindings
-bindsym $alt+t exec /home/sns/scripts/reload.sh
-bindsym $alt+f exec kitty -e yazi 
-bindsym $alt+w exec kitty -e yazi /home/sns/Pictures/Wallpapers
-bindsym $alt+b exec qutebrowser
+bindsym $mod+y exec /home/sns/scripts/reload.sh
 
 # screenshots
 bindsym $mod+Shift+p exec /home/sns/scripts/save_screen.sh
@@ -115,8 +112,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # Workspaces:
-workspace_layout default 
-#
+workspace_layout tabbed
 
 # Switch to workspace
 bindsym $mod+1 workspace number 1
