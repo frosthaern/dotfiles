@@ -3,7 +3,8 @@ local config = wezterm.config_builder()
 config.enable_wayland = false
 
 -- font
-config.font = wezterm.font("JetBrainsMono Nerd Font Mono", { weight = "Bold", stretch = "Normal", style = "Italic" })
+config.font = wezterm.font("RecMonoDuotone Nerd Font Mono", { stretch = "Normal", style = "Italic" })
+
 
 config.font_size = 13.0
 

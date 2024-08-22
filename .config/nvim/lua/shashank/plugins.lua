@@ -91,19 +91,17 @@ require("lazy").setup({
 	},
 
 	---------------------------------------------------------------------
-	--tokyonight
+	---colorscheme
+	-- { "rose-pine/nvim",  name = "rose-pine" },
+	-- { "EdenEast/nightfox.nvim" },
 	{
 		"folke/tokyonight.nvim",
 		lazy = false,
 		priority = 1000,
-		opts = {},
+		opts = {
+			style = "night",
+		},
 	},
-
-	---------------------------------------------------------------------
-	---colorscheme
-	-- { "rose-pine/nvim",  name = "rose-pine" },
-	-- { "EdenEast/nightfox.nvim" },
-
 	---------------------------------------------------------------------
 	{ "tpope/vim-sleuth" }, -- Detect tabstop and shiftwidth automatically
 

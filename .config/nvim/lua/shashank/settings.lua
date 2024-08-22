@@ -21,6 +21,7 @@ vim.g.have_nerd_font = true
 vim.opt.mouse = "a"
 vim.opt.showmode = false
 vim.opt.breakindent = true
+vim.opt.termguicolors = false
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.signcolumn = "no"
@@ -32,6 +33,7 @@ vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 vim.opt.inccommand = "split"
 vim.g.netrw_banner = 0
 vim.g.netrw_browser_split = 0
+vim.cmd [[ colorscheme tokyonight-night ]]
 vim.g.netrw_winsize = 25
 vim.g.vikwiki_global_ext = 0
 vim.g.vimwiki_list = { {
