@@ -1,5 +1,5 @@
 # font
-set font "MartianMono NFM Cond Med 12"
+set font "JetBrainsMono 12"
 
 # database
 set database sqlite

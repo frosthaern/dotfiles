@@ -37,6 +37,7 @@ export PATH="$JAVA_HOME/bin:$PATH"
 export NVM_DIR="$HOME/.config/nvm"
 export WEZTERM_GUI_BACKEND="wayland"
 export WALLPAPER_DIR='/home/shashank/Pictures/Wallpapers'
+export TERM='wezterm'
 
 # Personal projects
 export PATH="$HOME/Code/todo-rs/target/release/:$PATH"

@@ -3,13 +3,13 @@ local config = wezterm.config_builder()
 config.enable_wayland = false
 
 -- font
-config.font = wezterm.font("RecMonoDuotone Nerd Font Mono", { stretch = "Normal", style = "Italic" })
+wezterm.font("JetBrainsMono Nerd Font", { weight = "ExtraLight", stretch = "Normal", style = "Normal" }) -- (AKA: JetBrainsMono NF, JetBrainsMono NF ExtraLight) /usr/share/fonts/TTF/JetBrainsMonoNerdFont-ExtraLight.ttf, FontConfig
 
 
-config.font_size = 13.0
+config.font_size = 15.0
 
 --colorscheme
-config.color_scheme = "carbonfox"
+config.color_scheme = "tokyonight_night"
 
 --cursor style
 config.default_cursor_style = 'SteadyBlock'
