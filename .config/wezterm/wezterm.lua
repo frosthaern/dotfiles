@@ -3,7 +3,7 @@ local config = wezterm.config_builder()
 config.enable_wayland = false
 
 -- font
-wezterm.font("JetBrainsMono Nerd Font", { weight = "ExtraLight", stretch = "Normal", style = "Normal" }) -- (AKA: JetBrainsMono NF, JetBrainsMono NF ExtraLight) /usr/share/fonts/TTF/JetBrainsMonoNerdFont-ExtraLight.ttf, FontConfig
+wezterm.font("JetBrainsMono")
 
 config.font_size = 13.0
 

@@ -75,23 +75,19 @@ vim.api.nvim_create_autocmd("LspAttach", {
 })
 
 local lspconfig = require("lspconfig")
-require("mason-lspconfig").setup({
-	ensure_installed = {
-		"lua_ls",
-		"rust_analyzer",
-		"clangd",
-	},
-})
 
 lspconfig.rust_analyzer.setup({
+	capabilities = capabilities,
 	filetypes = { "rust" },
 })
 
 lspconfig.clangd.setup({
+	capabilities = capabilities,
 	filetypes = { "c", "cpp" },
 })
 
 lspconfig.lua_ls.setup({
+	capabilities = capabilities,
 	settings = {
 		Lua = {
 			diagnostics = {
@@ -99,4 +95,8 @@ lspconfig.lua_ls.setup({
 			},
 		},
 	},
+})
+
+vim.diagnostic.config({
+	virtual_text = false,
 })

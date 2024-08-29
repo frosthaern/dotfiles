@@ -35,7 +35,7 @@ vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 vim.opt.inccommand = "split"
 -- vim.g.netrw_banner = 0
 -- vim.g.netrw_browser_split = 0
-vim.cmd [[ colorscheme carbonfox ]]
+vim.cmd([[ colorscheme carbonfox ]])
 -- vim.g.netrw_winsize = 25
 vim.g.vikwiki_global_ext = 0
 vim.g.vimwiki_list = { {

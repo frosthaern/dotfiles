@@ -98,12 +98,8 @@ local plugins = {
 	--- trouble
 	{
 		"folke/trouble.nvim",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-		opts = {
-			potision = "bottom",
-			height = 8,
-			icons = true,
-		},
+		opts = {}, -- for default options, refer to the configuration section for custom setup.
+		cmd = "Trouble",
 	},
 	---------------------------------------------------------------------------------------------------------------------
 	---------------------------------------------------------------------------------------------------------------------
