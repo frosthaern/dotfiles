@@ -45,6 +45,7 @@ alias tshow='cat /sys/devices/system/cpu/intel_pstate/no_turbo'
 alias update='sudo pacman -Syu; paru -Syu'
 alias zf='zathura ~/$(fzf)'
 alias think='nvim think.md'
+alias mp3='yt-dlp -x $1 --audio-format mp3'
 
 # pacman commands
 alias ps='pacman -Ss'
