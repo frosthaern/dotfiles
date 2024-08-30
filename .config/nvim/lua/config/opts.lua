@@ -19,6 +19,7 @@ vim.opt.updatetime = 50
 vim.opt.colorcolumn = "1000"
 vim.o.scrolloff = 10
 vim.g.have_nerd_font = true
+vim.opt.signcolumn = "yes"
 vim.opt.mouse = "a"
 vim.opt.showmode = false
 vim.opt.breakindent = true
