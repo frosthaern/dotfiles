@@ -21,5 +21,9 @@ return {
 				winblend = 3,
 			},
 		},
+		config = function()
+			require("toggleterm").setup({})
+			vim.keymap.set("n", "<leader>tg", ":ToggleTerm direction=float<CR>")
+		end,
 	},
 }
