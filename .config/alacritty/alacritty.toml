@@ -1,10 +1,10 @@
 [window]
-
 opacity = 1.0
 padding.x = 5
 padding.y = 5
 decorations = "Full"
 decorations_theme_variant = "Dark" # "Dark"
+startup_mode = "Maximized"
 
 [font]
 

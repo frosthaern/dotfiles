@@ -22,6 +22,7 @@ return { -- Autoformat
 			rust = { "rustfmt" },
 			c = { "clang-format" },
 			cpp = { "clang-format" },
+			go = { "gofmt" },
 		},
 	},
 }
