@@ -1,4 +1,4 @@
-#nclude directives
+#include directives
 include ~/.cache/wal/colors-sway
 
 
@@ -16,7 +16,7 @@ set $left h
 set $down j
 set $up k
 set $right l
-set $term kitty
+set $term alacritty
 set $font JetBrainsMono
 set $menu rofi -show run
 set $lock swaylock -i $wallpaper
@@ -30,8 +30,8 @@ smart_borders on
 
 # colors for whatever i want and nothing else
 # class                 border  backgr. text    indicator child_border
-client.focused          $color1 $background $foreground $color2 $color3
-client.focused_inactive $color2 $background $foreground $color3 $color4
+client.focused          #161616 #f2f4f8 #7b7c7e #ee5396 #353535
+client.focused_inactive #252525 #f2f4f8 #7b7c7e #353535 #484848
 
 # personal settings
 

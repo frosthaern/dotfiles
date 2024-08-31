@@ -26,6 +26,3 @@ window {
   border: 2px;
   border-color: #888888;
 }
-
-@import "~/.cache/wal/colors-rofi-dark"
-

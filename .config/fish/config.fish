@@ -45,7 +45,7 @@ alias tshow='cat /sys/devices/system/cpu/intel_pstate/no_turbo'
 alias update='sudo pacman -Syu; paru -Syu'
 alias zf='zathura ~/$(fzf)'
 alias think='nvim think.md'
-alias mp3='yt-dlp -x $1 --audio-format mp3'
+alias mp3='yt-dlp -x "$1" --audio-format mp3'
 alias nv='nvim -u ~/.config/kickstart.nvim/init.lua $1'
 alias p='set -x a $(fd -t d | fzf); tmux new-session -s $a -c $a'
 
