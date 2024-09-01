@@ -33,21 +33,17 @@ set -gx PATH "$HOME/Code/suburl_crawler_py" $PATH
 
 # Aliases
 alias l='ls -al'
-alias d='fd -t d -H | fzf'
-alias f='fd -t f -H | fzf'
 alias convertpngtojpg='mogrify -format jpg *.png'
 alias vate='source .venv/bin/activate'
 alias mc='java -jar ~/SKlauncher-3.2.8.jar'
 alias c='code'
-alias toff='echo "1" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo'
-alias ton='echo "0" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo'
-alias tshow='cat /sys/devices/system/cpu/intel_pstate/no_turbo'
+# alias toff='echo "1" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo'
+# alias ton='echo "0" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo'
+# alias tshow='cat /sys/devices/system/cpu/intel_pstate/no_turbo'
 alias update='sudo pacman -Syu; paru -Syu'
 alias zf='zathura ~/$(fzf)'
-alias think='nvim think.md'
 alias mp3='yt-dlp -x "$1" --audio-format mp3'
 alias nv='nvim -u ~/.config/kickstart.nvim/init.lua $1'
-alias p='set -x a $(fd -t d | fzf); tmux new-session -s $a -c $a'
 
 # pacman commands
 alias ps='pacman -Ss'
@@ -123,5 +119,35 @@ function ffall
 end
 
 
+function tmux_shit
+    if test -n "$_tmux_shit_guard"
+        return
+    end
+    set -g _tmux_shit_guard 1
+
+    set sessions (tmux ls | awk -F ':' '{print $1}')
+    set selected_dir (fd -t d | fzf)
+
+    if test -z "$selected_dir"
+        echo "No directory selected."
+        set -e _tmux_shit_guard
+        return 1
+    end
+
+    set session_name (basename "$selected_dir")
+
+    if contains -- "$session_name" $sessions
+        tmux attach-session -t "$session_name"
+    else
+        tmux new-session -s "$session_name" -c "$selected_dir"
+    end
+
+    sleep 0.1
+    set -e _tmux_shit_guard
+end
+
+bind \ct tmux_shit
+
+
 # Starship prompt initialization
-eval (starship init fish | source)
+# eval (starship init fish | source)

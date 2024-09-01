@@ -25,6 +25,12 @@ return {
 				map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
 				map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction", { "n", "x" })
 				map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
+				vim.keymap.set(
+					"n",
+					"<leader>e",
+					vim.diagnostic.open_float,
+					{ noremap = true, silent = true, desc = "Show diagnostics" }
+				)
 
 				local client = vim.lsp.get_client_by_id(event.data.client_id)
 				if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
@@ -78,10 +84,6 @@ return {
 					})
 				end,
 			},
-		})
-
-		vim.diagnostic.config({
-			virtual_text = false,
 		})
 	end,
 }

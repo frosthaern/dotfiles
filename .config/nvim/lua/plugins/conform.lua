@@ -23,6 +23,8 @@ return { -- Autoformat
 			c = { "clang-format" },
 			cpp = { "clang-format" },
 			go = { "gofmt" },
+			html = { "prettier" },
+			cmake = { "cmakelang" },
 		},
 	},
 }
