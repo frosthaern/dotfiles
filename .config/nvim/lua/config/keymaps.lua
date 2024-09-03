@@ -12,7 +12,7 @@ vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left wind
 vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
 
 --tabbing and terminaling
-vim.keymap.set("n", "<C-t>", ":tabnew<CR>", { desc = "create a new tab and make a terminal out of it" })
+vim.keymap.set("n", "<M-t>", ":tabnew<CR>", { desc = "create a new tab and make a terminal out of it" })
 vim.keymap.set("n", "<M-l>", ":tabnext<CR>", { desc = "move to next tab" })
 vim.keymap.set("n", "<M-h>", ":tabprevious<CR>", { desc = "move to previous tab" })
 vim.keymap.set("n", "<M-c>", ":close<CR>", { desc = "close current tab" })
