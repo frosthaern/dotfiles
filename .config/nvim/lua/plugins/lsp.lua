@@ -85,5 +85,9 @@ return {
 				end,
 			},
 		})
+
+		-- vim.diagnostic.config({
+		-- 	virtual_text = false,
+		-- })
 	end,
 }

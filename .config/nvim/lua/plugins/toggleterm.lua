@@ -23,7 +23,7 @@ return {
 		},
 		config = function()
 			require("toggleterm").setup({})
-			vim.keymap.set("n", "<leader>tt", ":ToggleTerm direction=horizontal<CR>")
+			vim.keymap.set("n", "<leader>te", ":ToggleTerm direction=float<CR>")
 		end,
 	},
 }

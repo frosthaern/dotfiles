@@ -34,7 +34,7 @@ set -gx PATH "$HOME/Code/suburl_crawler_py" $PATH
 # Aliases
 alias l='ls -al'
 alias convertpngtojpg='mogrify -format jpg *.png'
-alias vate='source .venv/bin/activate'
+alias vate='source .venv/bin/activate.fish'
 alias mc='java -jar ~/SKlauncher-3.2.8.jar'
 alias c='code'
 # alias toff='echo "1" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo'
