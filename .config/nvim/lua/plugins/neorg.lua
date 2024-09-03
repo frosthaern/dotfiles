@@ -12,6 +12,7 @@ return {
 				},
 				["core.autocommands"] = {},
 				["core.integrations.treesitter"] = {},
+				["core.export"] = {},
 			},
 		})
 	end,

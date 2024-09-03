@@ -147,7 +147,3 @@ function tmux_shit
 end
 
 bind \ct tmux_shit
-
-
-# Starship prompt initialization
-# eval (starship init fish | source)

@@ -5,3 +5,10 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 		vim.highlight.on_yank()
 	end,
 })
+
+vim.api.nvim_create_user_command("NeorgToPdf", function()
+	vim.cmd("Neorg export to-file output.md")
+	vim.fn.system("pandoc -o output.pdf output.md")
+	vim.fn.system("rm -rf output.md")
+	vim.cmd("echo 'the file has been created'")
+end, {})
