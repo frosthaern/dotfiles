@@ -45,6 +45,7 @@ alias zf='zathura ~/$(fzf)'
 alias mp3='yt-dlp -x "$1" --audio-format mp3'
 alias nv='nvim -u ~/.config/kickstart.nvim/init.lua $1'
 alias zls="zellij list-sessions"
+alias zel="zellij -s $(basename $(pwd))"
 
 # pacman commands
 alias ps='pacman -Ss'
