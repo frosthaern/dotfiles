@@ -12,3 +12,10 @@ vim.api.nvim_create_user_command("NeorgToPdf", function()
 	vim.fn.system("rm -rf output.md")
 	vim.cmd("echo 'the file has been created'")
 end, {})
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+	pattern = "*",
+	callback = function(args)
+		require("conform").format({ bufnr = args.buf })
+	end,
+})

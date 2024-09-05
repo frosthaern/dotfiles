@@ -22,10 +22,8 @@ return { -- Autoformat
 			rust = { "rustfmt" },
 			c = { "clang-format" },
 			cpp = { "clang-format" },
-			html = { "prettier" },
 			cmake = { "cmakelang" },
 			json = { "clang-format" },
-			python = { "isort" },
 		},
 	},
 }

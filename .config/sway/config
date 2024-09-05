@@ -1,13 +1,9 @@
-#include directives
-include ~/.cache/wal/colors-sway
-
-
 # startup things
-exec --no-startup-id swaybg -i "$wallpaper" -m fill
-exec --no-startup-id swaync
-exec --no-startup-id waybar
-exec --no-startup-id wal -R
-exec --no-startup-id toff
+# exec --no-startup-id swaybg -i "$wallpaper" -m fill
+# exec --no-startup-id swaync
+# exec --no-startup-id waybar
+# exec --no-startup-id wal -R
+# exec --no-startup-id toff
 
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
@@ -18,8 +14,7 @@ set $up k
 set $right l
 set $term alacritty
 set $font JetBrainsMono
-set $menu rofi -show run
-set $lock swaylock -i $wallpaper
+set $menu bemenu-run
 
 # setting font
 font pango:$font 10
@@ -28,10 +23,34 @@ font pango:$font 10
 default_border pixel 2
 smart_borders on
 
+
+set $base00 #161616
+set $base01 #252525
+set $base02 #353535
+set $base03 #484848
+set $base04 #7b7c7e
+set $base05 #f2f4f8
+set $base06 #b6b8bb
+set $base07 #e4e4e5
+set $base08 #ee5396
+set $base09 #3ddbd9
+set $base0A #08bdba
+set $base0B #25be6a
+set $base0C #33b1ff
+set $base0D #78a9ff
+set $base0E #be95ff
+set $base0F #ff7eb6
+
 # colors for whatever i want and nothing else
-# class                 border  backgr. text    indicator child_border
-client.focused          #161616 #f2f4f8 #7b7c7e #ee5396 #353535
-client.focused_inactive #252525 #f2f4f8 #7b7c7e #353535 #484848
+# class                 border  backgr  text    indicator child_border
+client.focused          $base08 $base08 $base00 $base05
+client.focused_inactive $base02 $base02 $base01 $base05
+client.unfocused        $base01 $base01 $base00 $base04
+client.urgent           $base0E $base0E $base00 $base05
+
+
+# client.focused          #161616 #f2f4f8 #7b7c7e #ee5396 #353535
+# client.focused_inactive #252525 #f2f4f8 #7b7c7e #222222 #484848
 
 # personal settings
 
@@ -73,7 +92,6 @@ bindsym $mod+Return exec $term
 
 # power settings and shit
 bindsym $mod+Shift+o exec systemctl poweroff
-bindsym $mod+o exec swaylock -i $wallpaper
 
 
 # Kill focused window
@@ -185,7 +203,6 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
-
 #
 # Status Bar:
 #

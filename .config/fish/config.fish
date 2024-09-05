@@ -46,12 +46,7 @@ alias mp3='yt-dlp -x "$1" --audio-format mp3'
 alias nv='nvim -u ~/.config/kickstart.nvim/init.lua $1'
 alias zls="zellij list-sessions"
 alias zel="zellij -s $(basename $(pwd))"
-
-# pacman commands
-alias ps='pacman -Ss'
-alias pi='sudo pacman -Sy'
-alias pas='paru -Ss'
-alias pai='paru -S'
+alias manga="python $HOME/mangaplace/mangaplace/main.py"
 
 # Important system aliases
 alias gmute='pamixer --get-mute'
@@ -119,33 +114,3 @@ function ffall
         echo '--------------------------------------------------------------------------------------------'
     end
 end
-
-
-function tmux_shit
-    if test -n "$_tmux_shit_guard"
-        return
-    end
-    set -g _tmux_shit_guard 1
-
-    set sessions (tmux ls | awk -F ':' '{print $1}')
-    set selected_dir (fd -t d | fzf)
-
-    if test -z "$selected_dir"
-        echo "No directory selected."
-        set -e _tmux_shit_guard
-        return 1
-    end
-
-    set session_name (basename "$selected_dir")
-
-    if contains -- "$session_name" $sessions
-        tmux attach-session -t "$session_name"
-    else
-        tmux new-session -s "$session_name" -c "$selected_dir"
-    end
-
-    sleep 0.1
-    set -e _tmux_shit_guard
-end
-
-bind \ct tmux_shit
