@@ -2,7 +2,7 @@
 opacity = 1.0
 padding.x = 5
 padding.y = 5
-decorations = "Full"
+decorations = "None"
 decorations_theme_variant = "Dark" # "Dark"
 startup_mode = "Maximized"
 
