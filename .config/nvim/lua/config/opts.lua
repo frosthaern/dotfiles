@@ -29,6 +29,9 @@ vim.opt.splitbelow = true
 vim.opt.list = true
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 vim.opt.inccommand = "split"
+vim.g.codeium_disable_bindings = 1
+vim.cmd("let g:codeium_render = v:false")
+vim.g.codeium_disable_virtual_text = true
 vim.g.netrw_banner = 0
 vim.g.netrw_browser_split = 0
 vim.cmd.colorscheme("carbonfox")
