@@ -43,10 +43,10 @@ set $base0F #ff7eb6
 
 # colors for whatever i want and nothing else
 # class                 border  backgr  text    indicator child_border
-client.focused          $base08 $base08 $base00 $base05
-client.focused_inactive $base02 $base02 $base01 $base05
-client.unfocused        $base01 $base01 $base00 $base04
-client.urgent           $base0E $base0E $base00 $base05
+# client.focused          $base08 $base08 $base00 $base05
+# client.focused_inactive $base02 $base02 $base01 $base05
+# client.unfocused        $base01 $base01 $base00 $base04
+# client.urgent           $base0E $base0E $base00 $base05
 
 
 # client.focused          #161616 #f2f4f8 #7b7c7e #ee5396 #353535
@@ -63,9 +63,13 @@ input "1739:52861:SYNA32C6:00_06CB:CE7D_Touchpad" {
         tap enabled
         natural_scroll enabled
         middle_emulation enabled
+        accel_profile "adaptive"
+        pointer_accel 1
 }
 
 input "1739:52861:SYNA32C6:00_06CB:CE7D_Mouse" {
+        accel_profile "flat"
+        pointer_accel 1.0
 }
 
 ### Key bindings
@@ -130,7 +134,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # Workspaces:
-workspace_layout tabbed
+workspace_layout default
 
 # Switch to workspace
 bindsym $mod+1 workspace number 1
