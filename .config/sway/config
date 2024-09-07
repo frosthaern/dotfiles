@@ -4,6 +4,7 @@
 # exec --no-startup-id waybar
 # exec --no-startup-id wal -R
 # exec --no-startup-id toff
+exec swaybg -i ~/Pictures/Wallpapers/arch.png -m fill
 
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4

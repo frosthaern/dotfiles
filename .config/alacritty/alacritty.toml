@@ -1,7 +1,7 @@
 [window]
 opacity = 1.0
-padding.x = 5
-padding.y = 5
+padding.x = 10
+padding.y = 10
 decorations = "None"
 decorations_theme_variant = "Dark" # "Dark"
 startup_mode = "Maximized"
@@ -9,7 +9,7 @@ startup_mode = "Maximized"
 [font]
 
 normal.family = "JetBrainsMono"
-size = 15.0
+size = 13.0
 
 [colors.primary]
 background = "#000000"
