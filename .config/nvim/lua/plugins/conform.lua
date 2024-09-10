@@ -19,7 +19,7 @@ return { -- Autoformat
 		},
 		formatters_by_ft = {
 			lua = { "stylua" },
-			rust = { "rustfmt" },
+			go = { "gofmt" },
 			c = { "clang-format" },
 			cpp = { "clang-format" },
 			cmake = { "cmakelang" },
