@@ -3,6 +3,6 @@
 
 killall waybar
 killall swaync
-swaymsg reload
+hyprctl reload
 waybar &
 swaync &
