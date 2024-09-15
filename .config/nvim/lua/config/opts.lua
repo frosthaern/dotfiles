@@ -23,6 +23,7 @@ vim.opt.breakindent = true
 vim.opt.termguicolors = false
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
+vim.g.disable_autoformat = true
 vim.opt.timeoutlen = 1000
 vim.opt.splitright = true
 vim.opt.splitbelow = true

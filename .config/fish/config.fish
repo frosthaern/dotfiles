@@ -17,7 +17,7 @@ set -gx JAVA_HOME "/usr/lib/jvm/default"
 set -gx NVM_DIR "$HOME/.config/nvm"
 set -gx WEZTERM_GUI_BACKEND "wayland"
 set -gx WALLPAPER_DIR "$HOME/Pictures/Wallpapers"
-set -x XDG_CURRENT_DESKTOP Hyprland
+set -x XDG_CURRENT_DESKTOP "Hyprland"
 
 # Personal projects and paths
 set -gx PATH "$HOME/.cargo/bin" $PATH
@@ -40,7 +40,7 @@ alias mc='java -jar ~/SKlauncher-3.2.8.jar'
 # alias toff='echo "1" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo'
 # alias ton='echo "0" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo'
 # alias tshow='cat /sys/devices/system/cpu/intel_pstate/no_turbo'
-alias update='sudo pacman -Syu; paru -Syu'
+alias update='sudo pacman -Syu; yay -Syu'
 alias zf='zathura ~/$(fzf)'
 alias mp3='yt-dlp -x "$1" --audio-format mp3'
 alias nv='nvim -u ~/.config/kickstart.nvim/init.lua $1'
