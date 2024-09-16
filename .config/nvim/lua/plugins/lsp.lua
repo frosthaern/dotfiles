@@ -69,9 +69,9 @@ return {
 		require("mason").setup()
 
 		local ensure_installed = {
-			"clangd",
 			"rust_analyzer",
-			"gopls",
+			"clangd",
+			"pyright",
 			"lua_ls",
 		}
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })

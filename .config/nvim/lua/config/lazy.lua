@@ -19,7 +19,21 @@ vim.g.maplocalleader = " "
 
 require("lazy").setup({
 	spec = {
-		{ import = "plugins" },
+		{ import = "plugins.colorscheme" },
+		{ import = "plugins.comment" },
+		{ import = "plugins.conform" },
+		{ import = "plugins.git_signs" },
+		{ import = "plugins.indentline" },
+		{ import = "plugins.lazydev" },
+		{ import = "plugins.mini" },
+		{ import = "plugins.neogit" },
+		{ import = "plugins.neorg" },
+		{ import = "plugins.oil" },
+		{ import = "plugins.surround" },
+		{ import = "plugins.telescope" },
+		{ import = "plugins.toggleterm" },
+		{ import = "plugins.treesitter" },
+		{ import = "plugins.vim_sleuth" },
 	},
 	install = { colorscheme = { "carbonfox" } },
 	checker = { enabled = true },
