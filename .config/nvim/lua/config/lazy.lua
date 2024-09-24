@@ -19,19 +19,21 @@ vim.g.maplocalleader = " "
 
 require("lazy").setup({
 	spec = {
+		{ import = "plugins.cmp" },
 		{ import = "plugins.colorscheme" },
 		{ import = "plugins.comment" },
 		{ import = "plugins.conform" },
 		{ import = "plugins.git_signs" },
 		{ import = "plugins.indentline" },
 		{ import = "plugins.lazydev" },
+		{ import = "plugins.lsp" },
 		{ import = "plugins.mini" },
 		{ import = "plugins.neogit" },
 		{ import = "plugins.neorg" },
 		{ import = "plugins.oil" },
 		{ import = "plugins.surround" },
 		{ import = "plugins.telescope" },
-		{ import = "plugins.toggleterm" },
+		{ import = "plugins.todo" },
 		{ import = "plugins.treesitter" },
 		{ import = "plugins.vim_sleuth" },
 	},

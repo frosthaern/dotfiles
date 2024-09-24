@@ -1,7 +1,6 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.opt.number = true
-vim.opt.cursorline = true
 vim.opt.relativenumber = true
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
@@ -25,6 +24,7 @@ vim.opt.termguicolors = false
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.g.disable_autoformat = true
+vim.cmd("set mouse=")
 vim.opt.timeoutlen = 1000
 vim.opt.splitright = true
 vim.opt.splitbelow = true

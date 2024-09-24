@@ -17,7 +17,7 @@ set -gx JAVA_HOME "/usr/lib/jvm/default"
 set -gx NVM_DIR "$HOME/.config/nvm"
 set -gx WEZTERM_GUI_BACKEND "wayland"
 set -gx WALLPAPER_DIR "$HOME/Pictures/Wallpapers"
-set -x XDG_CURRENT_DESKTOP "Hyprland"
+set -gx XDG_CURRENT_DESKTOP "Hyprland"
 
 # Personal projects and paths
 set -gx PATH "$HOME/.cargo/bin" $PATH

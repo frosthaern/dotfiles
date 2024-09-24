@@ -13,12 +13,12 @@ vim.api.nvim_create_user_command("NeorgToPdf", function()
   vim.cmd("echo 'the file has been created'")
 end, {})
 
-vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = "*",
-  callback = function(args)
-    require("conform").format({ bufnr = args.buf })
-  end,
-})
+-- vim.api.nvim_create_autocmd("BufWritePre", {
+--   pattern = "*",
+--   callback = function(args)
+--     require("conform").format({ bufnr = args.buf })
+--   end,
+-- })
 
 vim.api.nvim_create_user_command("Format", function(args)
   local range = nil
@@ -31,3 +31,10 @@ vim.api.nvim_create_user_command("Format", function(args)
   end
   require("conform").format({ async = true, lsp_format = "fallback", range = range })
 end, { range = true })
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "norg",
+  callback = function()
+    vim.b.codeium_enabled = false -- Disable Codeium for Neorg files
+  end,
+})
