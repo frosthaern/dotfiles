@@ -20,6 +20,8 @@ vim.g.maplocalleader = " "
 require("lazy").setup({
 	spec = {
 		{ import = "plugins.cmp" },
+		-- { import = "plugins.codeium" },
+		{ import = "plugins.trouble" },
 		{ import = "plugins.colorscheme" },
 		{ import = "plugins.comment" },
 		{ import = "plugins.conform" },
