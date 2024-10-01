@@ -10,12 +10,14 @@ vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagn
 -- its like vim-tmux-navigator and shit
 vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
 vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
+vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the down window" })
+vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the up window" })
 
 --tabbing and terminaling
-vim.keymap.set("n", "<M-t>", ":tabnew<CR>", { desc = "create a new tab" })
-vim.keymap.set("n", "<M-l>", ":tabnext<CR>", { desc = "move to next tab" })
-vim.keymap.set("n", "<M-h>", ":tabprevious<CR>", { desc = "move to previous tab" })
-vim.keymap.set("n", "<M-q>", ":close<CR>", { desc = "close current tab" })
+-- vim.keymap.set("n", "<M-t>", ":tabnew<CR>", { desc = "create a new tab" })
+-- vim.keymap.set("n", "<M-l>", ":tabnext<CR>", { desc = "move to next tab" })
+-- vim.keymap.set("n", "<M-h>", ":tabprevious<CR>", { desc = "move to previous tab" })
+-- vim.keymap.set("n", "<M-q>", ":close<CR>", { desc = "close current tab" })
 
 --resizing for splits
 vim.keymap.set("n", "<M-j>", ":resize -2<CR>")
