@@ -21,8 +21,7 @@
 @define-color color15 @color15;
 
 * {
-    /* `otf-font-awesome` is required to be installed for icons */
-    font-family: "FiraCode Nerd Font", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-family: "JetBrainsMono Nerd Font", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     font-size: 13px;
     background-color: #000000;
 }

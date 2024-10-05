@@ -45,7 +45,7 @@ alias zf='zathura ~/$(fzf)'
 alias mp3='yt-dlp -x "$1" --audio-format mp3'
 alias nv='nvim -u ~/.config/kickstart.nvim/init.lua $1'
 alias zls="zellij list-sessions"
-alias manga="$HOME/manga-rs/target/release/manga-rs"
+alias manga="$HOME/manga/target/release/manga"
 
 # Important system aliases
 alias gmute='pamixer --get-mute'
