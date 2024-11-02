@@ -7,6 +7,7 @@ vim.opt.shiftwidth = 2
 vim.opt.softtabstop = 2
 vim.opt.expandtab = true
 vim.opt.swapfile = false
+vim.opt.cursorline = true
 vim.schedule(function()
   vim.opt.clipboard = "unnamedplus"
 end)

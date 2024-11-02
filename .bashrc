@@ -124,3 +124,4 @@ ffall() {
 [ -f "/home/sns/.ghcup/env" ] && . "/home/sns/.ghcup/env" # ghcup-env
 eval "$(starship init bash)"
 . "$HOME/.cargo/env"
+. "/home/shashank/.deno/env"

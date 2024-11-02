@@ -19,9 +19,9 @@ vim.g.maplocalleader = " "
 
 require("lazy").setup({
 	spec = {
-		{ import = "plugins.cmp" },
 		-- { import = "plugins.codeium" },
 		{ import = "plugins.trouble" },
+		{ import = "plugins.cmp" },
 		{ import = "plugins.colorscheme" },
 		{ import = "plugins.comment" },
 		{ import = "plugins.conform" },
@@ -40,6 +40,4 @@ require("lazy").setup({
 		{ import = "plugins.vim_sleuth" },
 		{ import = "plugins.toggleterm" },
 	},
-	install = { colorscheme = { "carbonfox" } },
-	checker = { enabled = true },
 })
