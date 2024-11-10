@@ -1,7 +1,9 @@
-font_family      family="JetBrainsMono Nerd"
+# BEGIN_KITTY_FONTS
+font_family      family="GeistMono Nerd Font"
 bold_font        auto
 italic_font      auto
 bold_italic_font auto
+# END_KITTY_FONTS
 
 # size
 font_size 13.0
@@ -10,7 +12,7 @@ font_size 13.0
 cursor_blink_interval 0
 
 # scroll
-scrollback_lines 500
+scrollback_lines -1
 wheel_scroll_multiplier 1.0
 
 open_url_with qutebrowser
@@ -30,9 +32,7 @@ hide_window_decorations yes
 confirm_os_window_close 0
 
 # tab bar
-tab_bar_style separator
-tab_separator " | "
-tab_bar_min_tabs 1
+tab_bar_style powerline
 tab_powerline_style slanted
 
 # mappings

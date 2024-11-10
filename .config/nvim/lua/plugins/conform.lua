@@ -9,7 +9,7 @@ return {
       -- java = { "clang-format" },
       cmake = { "cmakelang" },
       json = { "clang-format" },
-      python = { "black" },
+      python = { "black", "isort" },
       go = { "gofmt" },
       html = { "prettier" },
       typescript = { "prettier" },

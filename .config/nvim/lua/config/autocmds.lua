@@ -7,10 +7,15 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 vim.api.nvim_create_user_command("NeorgToPdf", function()
+  -- Get the name of the current buffer and remove the extension
+  local buffer_name = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":t:r")
+  local output_pdf = buffer_name .. ".pdf"
+  -- Export to markdown file and convert to PDF with pandoc
   vim.cmd("Neorg export to-file output.md")
-  vim.fn.system("pandoc -o output.pdf output.md")
+  vim.fn.system("pandoc -o " .. output_pdf .. " output.md")
   vim.fn.system("rm -rf output.md")
-  vim.cmd("echo 'the file has been created'")
+  -- Notify user
+  vim.cmd("echo 'The file " .. output_pdf .. " has been created'")
 end, {})
 
 -- vim.api.nvim_create_autocmd("BufWritePre", {
