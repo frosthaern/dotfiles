@@ -21,6 +21,7 @@ require("lazy").setup({
 	spec = {
 		-- { import = "plugins.codeium" },
 		{ import = "plugins.trouble" },
+		-- { import = "plugins.lualine" },
 		{ import = "plugins.cmp" },
 		{ import = "plugins.colorscheme" },
 		{ import = "plugins.comment" },

@@ -25,3 +25,6 @@ vim.keymap.set("n", "<M-k>", ":resize +2<CR>")
 
 --terminal keybindings
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
+
+-- yank whole file
+vim.keymap.set("n", "<leader>yf", ":%y+<CR>", { desc = "yank whole file" })

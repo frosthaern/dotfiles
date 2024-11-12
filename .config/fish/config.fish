@@ -5,6 +5,14 @@ function fish_greeting
     # do nothing
 end
 
+# function fish_prompt
+#     set user (whoami)
+#     set host (cat /etc/hostname)
+#     set dir (basename (pwd))
+#     echo -n "["$user"@"$host" "$dir"]\$ "
+# end
+
+
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 set -gx PS1 '[\u@\h \W]\$ '
