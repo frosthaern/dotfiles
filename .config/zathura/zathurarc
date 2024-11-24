@@ -1,11 +1,8 @@
 # font
-set font "JetBrainsMono 12"
+set font "FiraMono Nerd Font Mono 12"
 
 # database
 set database sqlite
-
-# highlight-color
-set highlight-color "#555500"
 
 # General settings
 set sandbox none
