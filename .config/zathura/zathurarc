@@ -5,7 +5,7 @@ set font "JetBrainsMono 12"
 set database sqlite
 
 # highlight-color
-set highlight-color "#5555500"
+set highlight-color "#555500"
 
 # General settings
 set sandbox none

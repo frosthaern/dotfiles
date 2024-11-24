@@ -39,3 +39,5 @@ vim.g.netrw_banner = 0
 vim.g.netrw_browser_split = 0
 -- vim.cmd.colorscheme("carbonfox")
 vim.cmd("set statusline+=%{get(b:,'gitsigns_status','')}")
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"

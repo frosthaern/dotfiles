@@ -28,3 +28,6 @@ vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" }
 
 -- yank whole file
 vim.keymap.set("n", "<leader>yf", ":%y+<CR>", { desc = "yank whole file" })
+
+-- for neorg: don't know what will happen in other filetypes
+vim.keymap.set("n", "z", "za", { desc = "shorten the za folding toggle to z" })
