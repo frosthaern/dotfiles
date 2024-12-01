@@ -41,6 +41,6 @@ end, { range = true })
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "norg",
 	callback = function()
-		vim.b.codeium_enabled = false -- Disable Codeium for Neorg files
+		vim.opt.foldmethod = "marker"
 	end,
 })

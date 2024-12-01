@@ -4,6 +4,7 @@ return {
 	version = "*", -- Pin Neorg to the latest stable release
 	config = function()
 		require("neorg").setup({
+			default_folding_mode = "folded",
 			load = {
 				["core.defaults"] = {},
 				["core.concealer"] = {
