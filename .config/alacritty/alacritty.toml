@@ -10,7 +10,7 @@ startup_mode = "Maximized"
 [font]
 
 normal.family = "GohuFont uni14 Nerd Font Mono"
-size = 15.0
+size = 17.0
 
 [general]
 import = ["/home/shashank/.cache/wal/alacritty-theme.toml"]
