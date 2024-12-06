@@ -9,7 +9,7 @@ startup_mode = "Maximized"
 
 [font]
 
-normal.family = "GohuFont uni14 Nerd Font Mono"
+normal.family = "GohuFont 11 Nerd Font Mono"
 size = 17.0
 
 [general]

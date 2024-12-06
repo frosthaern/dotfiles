@@ -2,7 +2,7 @@
 # shashanks fish config file
 
 function fish_greeting
-    # do nothing
+   # do nothing
 end
 
 # function fish_prompt
@@ -117,4 +117,18 @@ function ffall
         fastfetch -c /usr/share/fastfetch/presets/examples/$i.jsonc
         echo '--------------------------------------------------------------------------------------------'
     end
+end
+
+function send
+    curl -F "file=@$argv" https://0x0.st | wl-copy
+end
+
+function recv
+
+    if test (count argv) -ne 2
+        echo "recv <linkid> <output filename>"
+    end
+
+    curl https://0x0.st/$argv[1] -o $argv[2]
+
 end
