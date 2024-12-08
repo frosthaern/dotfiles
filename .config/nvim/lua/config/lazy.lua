@@ -27,7 +27,7 @@ require("lazy").setup({
 		{ import = "plugins.comment" },
 		{ import = "plugins.conform" },
 		{ import = "plugins.git_signs" },
-		{ import = "plugins.indentline" },
+		-- { import = "plugins.indentline" },
 		{ import = "plugins.lazydev" },
 		{ import = "plugins.lsp" },
 		{ import = "plugins.mini" },
