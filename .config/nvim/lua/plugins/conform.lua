@@ -8,7 +8,6 @@ return {
 			cpp = { "clang-format" },
 			cmake = { "cmakelang" },
 			json = { "clang-format" },
-			python = { "black", "isort" },
 			go = { "gofmt" },
 			java = { "google-java-format" },
 		},
