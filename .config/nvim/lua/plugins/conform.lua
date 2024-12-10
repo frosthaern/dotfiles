@@ -10,6 +10,7 @@ return {
 			json = { "clang-format" },
 			go = { "gofmt" },
 			java = { "google-java-format" },
+			haskell = { "fourmolu" },
 		},
 	},
 }
