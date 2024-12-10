@@ -6,7 +6,9 @@
 
 config_version: 2
 settings:
+  content.javascript.clipboard:
+    global: access-paste
   fonts.default_family:
-    global: JetBrainsMono Nerd Font
+    global: JetBrainsMonoNL Nerd Font Mono
   fonts.default_size:
-    global: 10pt
+    global: 11pt
