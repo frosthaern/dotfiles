@@ -11,7 +11,7 @@ return {
       go = { 'gofmt' },
       java = { 'google-java-format' },
       haskell = { 'fourmolu' },
-      python = { 'ruff' },
+      python = {"ruff_format"}
     },
   },
 }
