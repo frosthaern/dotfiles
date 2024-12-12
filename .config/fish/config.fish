@@ -26,6 +26,7 @@ set -gx NVM_DIR "$HOME/.config/nvm"
 set -gx WEZTERM_GUI_BACKEND "wayland"
 set -gx WALLPAPER_DIR "$HOME/Pictures/Wallpapers"
 set -gx XDG_CURRENT_DESKTOP "Hyprland"
+set -gx BROWSER "qutebrowser"
 
 # Personal projects and paths
 set -gx PATH "$HOME/.cargo/bin" $PATH

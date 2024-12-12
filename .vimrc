@@ -16,4 +16,4 @@ set wildmenu
 set wildmode=list:longest
 set hidden
 set ttyfast
-colorscheme elflord
+colorscheme default
