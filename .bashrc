@@ -37,12 +37,7 @@ export PATH="$JAVA_HOME/bin:$PATH"
 export NVM_DIR="$HOME/.config/nvm"
 export WEZTERM_GUI_BACKEND="wayland"
 export WALLPAPER_DIR='/home/shashank/Pictures/Wallpapers'
-export TERM='wezterm'
-
-# Personal projects
-export PATH="$HOME/Code/todo-rs/target/release/:$PATH"
-export PATH="$HOME/Codey/pass-rs/target/release/:$PATH"
-export PATH="$HOME/Code/suburl_crawler_py/:$PATH"
+export TERM='kitty'
 
 alias l='ls -al'
 alias d='fd -t d -H | fzf'
@@ -58,6 +53,10 @@ alias vate='source .venv/bin/activate'
 alias update='sudo pacman -Syu; paru -Syu'
 alias zf='zathura ~/$(fzf)'
 alias think='nvim think.md'
+alias mp3='yt-dlp -x "$1" --audio-format mp3'
+
+# this is hwo you do postgres
+# psql -U postgres -d student -h localhost -W
 
 # pacman commands
 alias ps='pacman -Ss'
@@ -105,9 +104,6 @@ export HISTFILE="$HOME/.histfile"
 # Evaluate zoxide initialization
 eval "$(zoxide init bash)"
 
-# some sway shit
-export XDG_CURRENT_DESKTOP="sway"
-
 ff() {
     fastfetch
 }
@@ -122,6 +118,12 @@ ffall() {
 }
 
 [ -f "/home/sns/.ghcup/env" ] && . "/home/sns/.ghcup/env" # ghcup-env
-eval "$(starship init bash)"
-. "$HOME/.cargo/env"
-. "/home/shashank/.deno/env"
+
+send() {
+    curl -F "file=@$argv" https://0x0.st | wl-copy
+}
+
+recv() {
+    curl https://0x0.st/$1 -o $2
+}
+

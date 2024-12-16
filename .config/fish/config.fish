@@ -103,9 +103,6 @@ set -gx HISTFILE "$HOME/.histfile"
 # Evaluate zoxide initialization
 eval (zoxide init fish | source)
 
-# # some sway shit
-# set -gx XDG_CURRENT_DESKTOP "sway"
-
 # Fish functions
 function ff
     fastfetch
