@@ -120,7 +120,7 @@ ffall() {
 [ -f "/home/sns/.ghcup/env" ] && . "/home/sns/.ghcup/env" # ghcup-env
 
 send() {
-    curl -F "file=@$argv" https://0x0.st | wl-copy
+    curl -F "file=@$1" https://0x0.st | wl-copy
 }
 
 recv() {

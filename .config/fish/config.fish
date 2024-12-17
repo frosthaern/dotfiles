@@ -59,8 +59,7 @@ alias batt='acpi -b'
 alias stat='status.sh'
 
 # Postgres login
-alias student='psql -U postgres -d student -h localhost -W'
-alias sgms='psql -U postgres -d sgms -h localhost -W'
+# alias student='psql -U postgres -d student -h localhost -W'
 
 # Git aliases
 alias gs='git status'
