@@ -7,7 +7,7 @@
 config_version: 2
 settings:
   content.javascript.clipboard:
-    global: access-paste
+    global: access
   fonts.default_family:
     global: JetBrainsMonoNL Nerd Font Mono
   fonts.default_size:
