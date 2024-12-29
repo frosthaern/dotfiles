@@ -7,7 +7,7 @@ decorations_theme_variant = "Dark"
 startup_mode = "Maximized"
 
 [font]
-normal.family = "IosevkaTerm NFP SemiBold"
+normal.family = "ZedMono NF Medium"
 size = 14.0
 
 [general]
