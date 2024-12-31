@@ -9,6 +9,6 @@ settings:
   content.javascript.clipboard:
     global: access
   fonts.default_family:
-    global: IosevkaTerm NFP Medium
+    global: IosevkaTermSlab NFP ExtraBold
   fonts.default_size:
-    global: 11pt
+    global: 13pt
