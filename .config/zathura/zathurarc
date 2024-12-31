@@ -1,5 +1,5 @@
 # font
-set font "JetBrainsMonoNL Nerd Font Mono"
+set font "IosevkaTermSlab Nerd Font Mono"
 
 # database
 set database sqlite
@@ -50,4 +50,3 @@ set show-recent 10
 # Rendering options
 set render-loading true
 set adjust-open width
-

@@ -46,7 +46,7 @@ require('lazy').setup({
     { import = 'plugins.todo' },
     { import = 'plugins.treesitter' },
     { import = 'plugins.vim_sleuth' },
-    -- { import = 'plugins.toggleterm' },
+    { import = 'plugins.toggleterm' },
     { import = 'plugins.autopairs' },
   },
 })
