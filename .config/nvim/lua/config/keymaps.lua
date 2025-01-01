@@ -19,10 +19,6 @@ vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the up window
 -- vim.keymap.set("n", "<M-h>", ":tabprevious<CR>", { desc = "move to previous tab" })
 -- vim.keymap.set("n", "<M-q>", ":close<CR>", { desc = "close current tab" })
 
---resizing for splits
-vim.keymap.set("n", "<M-j>", ":resize -2<CR>")
-vim.keymap.set("n", "<M-k>", ":resize +2<CR>")
-
 --terminal keybindings
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
