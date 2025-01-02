@@ -48,5 +48,6 @@ require('lazy').setup({
     { import = 'plugins.vim_sleuth' },
     { import = 'plugins.toggleterm' },
     { import = 'plugins.autopairs' },
+    { import = 'plugins.image' },
   },
 })
