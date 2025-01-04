@@ -13,7 +13,7 @@ end
 # end
 
 
-alias ls='ls --color=auto'
+alias l='lsd -l --color=auto'
 alias grep='grep --color=auto'
 set -gx PS1 '[\u@\h \W]\$ '
 
