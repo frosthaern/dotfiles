@@ -2,7 +2,7 @@ configuration {
   modes: "run,drun,window";
   width: 50;
   lines: 15;
-  font: "ZedMono NF Medium 12";
+  font: "JetBrainsMonoNL Nerd Font Mono SemiBold Italic 12";
   yoffset: 10;
   xoffset: 10;
   fixed-num-lines: true;

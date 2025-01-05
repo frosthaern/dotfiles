@@ -9,6 +9,6 @@ settings:
   content.javascript.clipboard:
     global: access
   fonts.default_family:
-    global: IosevkaTermSlab NFP ExtraBold
+    global: JetBrainsMonoNL Nerd Font Mono
   fonts.default_size:
     global: 13pt
