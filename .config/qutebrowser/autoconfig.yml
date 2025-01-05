@@ -12,3 +12,5 @@ settings:
     global: JetBrainsMonoNL Nerd Font Mono
   fonts.default_size:
     global: 13pt
+  tabs.favicons.show:
+    global: never
