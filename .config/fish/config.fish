@@ -13,8 +13,6 @@ end
 # end
 
 
-alias l='lsd -l --color=auto'
-alias grep='grep --color=auto'
 set -gx PS1 '[\u@\h \W]\$ '
 
 # Environment variables
@@ -42,7 +40,9 @@ set -gx PATH "$HOME/Codey/pass-rs/target/release" $PATH
 set -gx PATH "$HOME/Code/suburl_crawler_py" $PATH
 
 # Aliases
-alias l='ls -al'
+alias l='lsd -l --color=auto'
+alias ls='lsd --color=auto'
+alias grep='grep --color=auto'
 alias convertpngtojpg='mogrify -format jpg *.png'
 alias vate='source .venv/bin/activate.fish'
 alias mc='java -jar ~/SKlauncher-3.2.8.jar'
