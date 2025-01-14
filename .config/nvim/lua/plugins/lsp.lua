@@ -127,11 +127,8 @@ return {
 
     local ensure_installed = {
       'rust_analyzer',
-      'ts_ls',
       'clangd',
-      'pyright',
       'lua_ls',
-      'hls',
     }
     require('mason-tool-installer').setup({
       ensure_installed = ensure_installed,
