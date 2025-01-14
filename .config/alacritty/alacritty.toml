@@ -7,9 +7,9 @@ decorations_theme_variant = "Dark"
 startup_mode = "Maximized"
 
 [font]
-normal.family = "IosevkaTerm NFP Medium"
-normal.style = "Regular"
-size = 14.0
+normal.family = "JetBrainsMonoNL NFP Light"
+normal.style = "Medium"
+size = 12.0
 
 [general]
 import = ["/home/shashank/.cache/wal/alacritty-theme.toml"]

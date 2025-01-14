@@ -40,3 +40,4 @@ vim.g.netrw_browser_split = 0
 -- vim.cmd.colorscheme("carbonfox")
 vim.cmd("set statusline+=%{get(b:,'gitsigns_status','')}")
 vim.cmd('colorscheme carbonfox')
+vim.opt['guicursor'] = ''

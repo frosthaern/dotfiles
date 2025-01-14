@@ -1,8 +1,9 @@
 configuration {
   modes: "run,drun,window";
+  combi-modes: [window, drun, run];
   width: 50;
   lines: 15;
-  font: "JetBrainsMonoNL Nerd Font Mono SemiBold Italic 12";
+  font: "JetBrainsMonoNL Nerd Font Mono 12";
   yoffset: 10;
   xoffset: 10;
   fixed-num-lines: true;
@@ -11,6 +12,12 @@ configuration {
   drun-match-fields: "name,generic,exec,categories,keywords";
   drun-url-launcher: "xdg-open";
   drun-display-format: "{name}";
+  // display-window: ">> ";
+  // display-windowcd: ">> ";
+  // display-run: ">> ";
+  // display-ssh: ">> ";
+  // display-drun: ">> ";
+  // display-combi: ">> ";
   timeout {
       action: "kb-cancel";
       delay:  0;
@@ -28,4 +35,6 @@ window {
 }
 
 /* Dark theme. */
+
+@theme "/usr/share/rofi/themes/fancy.rasi"
 @import "~/.cache/wal/colors-rofi-dark"

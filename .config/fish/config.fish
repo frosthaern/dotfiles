@@ -40,8 +40,8 @@ set -gx PATH "$HOME/Codey/pass-rs/target/release" $PATH
 set -gx PATH "$HOME/Code/suburl_crawler_py" $PATH
 
 # Aliases
-alias l='lsd -l --color=auto'
-alias ls='lsd --color=auto'
+# alias l='lsd -l --color=auto'
+# alias ls='lsd --color=auto'
 alias grep='grep --color=auto'
 alias convertpngtojpg='mogrify -format jpg *.png'
 alias vate='source .venv/bin/activate.fish'

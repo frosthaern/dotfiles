@@ -6,8 +6,20 @@
 
 config_version: 2
 settings:
+  bindings.commands:
+    global:
+      normal:
+        <Ctrl+c>: download-clear
+  colors.webpage.darkmode.algorithm:
+    global: lightness-cielab
+  colors.webpage.darkmode.enabled:
+    global: true
   content.javascript.clipboard:
     global: access
+  content.media.audio_capture:
+    global: true
+  content.media.video_capture:
+    global: true
   fonts.default_family:
     global: JetBrainsMonoNL Nerd Font Mono
   fonts.default_size:
