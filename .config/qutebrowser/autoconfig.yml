@@ -25,4 +25,4 @@ settings:
   fonts.default_size:
     global: 13pt
   tabs.favicons.show:
-    global: never
+    global: always
