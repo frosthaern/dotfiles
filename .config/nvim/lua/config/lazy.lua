@@ -36,7 +36,7 @@ require('lazy').setup({
     { import = 'plugins.git_signs' },
     { import = 'plugins.indentline' },
     { import = 'plugins.lazydev' },
-    -- { import = 'plugins.lsp' },
+    { import = 'plugins.lsp' },
     { import = 'plugins.mini' },
     { import = 'plugins.neogit' },
     { import = 'plugins.neorg' },
@@ -47,7 +47,8 @@ require('lazy').setup({
     { import = 'plugins.treesitter' },
     { import = 'plugins.vim_sleuth' },
     { import = 'plugins.toggleterm' },
-    -- { import = 'plugins.autopairs' },
-    { import = 'plugins.image' },
-  },
+    -- { import = 'plugins.neovide' },
+    { import = 'plugins.autopairs' },
+    -- { import = 'plugins.image' },
+  }
 })

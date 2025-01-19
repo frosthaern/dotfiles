@@ -11,6 +11,10 @@ normal.family = "IosevkaTerm Nerd Font Mono"
 normal.style = "Medium"
 size = 14.0
 
+[cursor]
+style.shape = "Underline"
+style.blinking = "Never"
+
 [general]
 # import = ["/home/shashank/.cache/wal/alacritty-theme.toml"]
 import = ["/home/shashank/.config/alacritty-theme/themes/carbonfox.toml"]
