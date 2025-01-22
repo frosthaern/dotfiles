@@ -29,7 +29,7 @@ require('lazy').setup({
     -- { import = "plugins.codeium" },
     { import = 'plugins.trouble' },
     -- { import = "plugins.lualine" },
-    -- { import = 'plugins.cmp' },
+    { import = 'plugins.cmp' },
     { import = 'plugins.colorscheme' },
     { import = 'plugins.comment' },
     { import = 'plugins.conform' },
@@ -49,6 +49,6 @@ require('lazy').setup({
     { import = 'plugins.toggleterm' },
     -- { import = 'plugins.neovide' },
     { import = 'plugins.autopairs' },
-    -- { import = 'plugins.image' },
+    { import = 'plugins.image' },
   }
 })

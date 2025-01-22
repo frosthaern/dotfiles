@@ -1,1 +1,7 @@
-font-family = ZedMono NF Medium
+font-family = JetBrains Mono Nerd Font
+font-size = 14
+cursor-style = block
+theme = carbonfox
+shell-integration = none
+window-decoration = false
+confirm-close-surface = false
