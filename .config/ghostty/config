@@ -2,6 +2,10 @@ font-family = JetBrains Mono Nerd Font
 font-size = 14
 cursor-style = block
 theme = carbonfox
-shell-integration = none
+shell-integration = fish
 window-decoration = false
 confirm-close-surface = false
+
+# padding
+window-padding-x = 20
+window-padding-y = 20

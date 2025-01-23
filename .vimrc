@@ -12,8 +12,4 @@ set wrap
 set autoindent
 set smartindent
 set tabstop=2 shiftwidth=2 expandtab
-set wildmenu
-set wildmode=list:longest
-set hidden
-set ttyfast
 colorscheme default
