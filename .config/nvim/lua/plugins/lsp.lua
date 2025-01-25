@@ -126,8 +126,7 @@ return {
     require('mason').setup()
 
     local ensure_installed = {
-      'rust_analyzer',
-      'clangd',
+      'ruff',
       'lua_ls',
     }
     require('mason-tool-installer').setup({
