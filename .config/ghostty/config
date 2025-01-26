@@ -4,8 +4,7 @@ cursor-style = block
 theme = carbonfox
 shell-integration = none
 window-decoration = false
+window-theme = light
 confirm-close-surface = false
-
-# padding
 window-padding-x = 20
 window-padding-y = 20
