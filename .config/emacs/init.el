@@ -1,74 +1,57 @@
-					; this is the normal shit
+;; this is the normal shit
 (setq custom-file "~/dotfiles/.config/emacs/custom-emacs.el")
 (load custom-file)
 (tool-bar-mode -1)
 (server-start)
 (scroll-bar-mode -1)
 (menu-bar-mode -1)
-(show-paren-mode 1x)
+(show-paren-mode 1)
 (setq inhibit-startup-screen t)
 (global-display-line-numbers-mode t)
 (set-fringe-mode 10)
 (setq visual-bell t)
-(setq display-line-numbers 'relative)
 (column-number-mode t)
-(set-face-attribute 'default nil :family "Iosevka" :height 130)
-(global-hl-line-mode t)
+(set-face-attribute 'default nil :family "JetBrainsMonoNL Nerd Font Mono" :height 120)
 
-					; some important libraries
-
-(require 'dired-x)
-
-					; starting to set keybindings now
-
+;; starting to set keybindings now
 (global-set-key (kbd "C-c c") 'compile)
+(global-set-key (kbd "C-x C-k") 'kill-buffer-and-window)
 (windmove-default-keybindings)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (define-key dired-mode-map "c" 'find-file)
 
-					; configuring melpa
+;; autosave files and backup files and other files
+(setq make-backup-files nil)
+(setq autosave-default nil)
+(setq create-lockfiles nil)
+
+;; configuring melpa
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
 
-					; doom themes
-(unless (package-installed-p 'doom-themes)
-  (package-refresh-contents)
-  (package-install 'doom-themes))
-					; evil mode
-(unless (package-installed-p 'evil)
-  (package-refresh-contents)
-  (package-install 'evil))
+;; evil mode
+(use-package evil
+  :ensure t
+  :init
+  (setq evil-want-integration t)
+  (setq evil-want-keybindings nil)
+  :config
+  (evil-mode 1))
 
-					; load doom-one
-(require 'evil)
-
-					 ido mode
+;; ido mode
+(ido-mode 1)
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
-(ido-mode 1)
 (setq ido-use-filename-at-point 'guess)
 
-					; doom modeline
+;; undo tree
 
-(use-package doom-modeline
-  :ensure t
-  :init (doom-modeline-mode 1))
+;; (use-package undo-tree 
+;;   :ensure t
+;;   :config
+;;   (global-undo-tree-mode 1))
 
-					; org-mode cust
-(setq org-ellipsis "⤵")
-(use-package org-bullets :ensure t)
-(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
-(setq org-hide-leading-stars t)
-(setq org-src-fontify-natively t)
-(global-prettify-symbols-mode t)
-
-					; undo tree
-(use-package undo-tree)
-					; tab mode
+;; tab mode
 (setq-default tab-width 4
-          indent-tabs-mode nil)
-
-					; for completion
-(ivy-mode 1)
-(company-mode 1)
+         indent-tabs-mode nil)
