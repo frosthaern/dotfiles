@@ -1,0 +1,21 @@
+;; Emacs-W3 HTTP cookies file
+;; Automatically generated file!!! DO NOT EDIT!!!
+
+(setq url-cookie-storage
+ '(("libgen.is"
+  [url-cookie "lg_topic" "libgen" "Thu Jan 30 16:02:41 2025 GMT" "/" "libgen.is" nil])
+ (".google.com"
+  [url-cookie "NID" "521=mA6eVImRB3k8xy5n7AgMz6WbM3CLdwJ_aLQz0fZc2F7CTBFv7mWs5dkGGGMXyTAfDGt6NULbXrXzwkZLbqiOnXVbGntb8T4qSEqKHgc87_TJb8mIMb95CVlri6sQBR6JpiZ3fCSYf67Vt0BItca11mfr_HJ9MTTqDmbp6GdbVLELUS_pES8u9j0daYqIPp0g0O4G4fzCsm6d" "Mon, 28-Jul-2025 11:53:18 GMT" "/" ".google.com" nil]))
+)
+(setq url-cookie-secure-storage
+ '((".google.com"
+  [url-cookie "AEC" "AZ6Zc-Vn-HCcK1neccwObhe-teS38AOO8x6gGeaFk6kMyMeNZzRgkph4" "Fri, 25-Jul-2025 11:53:26 GMT" "/" ".google.com" t]))
+)
+
+;; Local Variables:
+;; version-control: never
+;; no-byte-compile: t
+;; coding: utf-8-emacs-unix
+;; End:
+
+;;; cookies ends here

@@ -25,6 +25,7 @@ set -gx WEZTERM_GUI_BACKEND "wayland"
 set -gx WALLPAPER_DIR "$HOME/Pictures/Wallpapers"
 set -gx XDG_CURRENT_DESKTOP "Hyprland"
 set -gx BROWSER "qutebrowser"
+# set -gx EMACSDIR "$HOME/.config/emacs"
 
 # i can setup colorscheme for gvim
 set -gx GTK_THEME "Adwaita:dark gvim"

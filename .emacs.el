@@ -37,7 +37,8 @@
 (global-set-key (kbd "C-x C-k") 'kill-buffer-and-window)
 (windmove-default-keybindings)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
-(define-key dired-mode-map "c" 'find-file)
+(with-eval-after-load 'dired
+  (define-key dired-mode-map (kbd "c") 'find-file))
 
 ;; for backup and autosaving
 (setq backup-directory-alist `((".*" . "~/.emacs.d/backups")))
@@ -49,10 +50,21 @@
 
 ;; configuring melpa
 (require 'package)
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+
+;; Add package archives
+(setq package-archives '(("melpa" . "https://melpa.org/packages/")
+                         ("gnu" . "https://elpa.gnu.org/packages/")))
 (package-initialize)
 
-;; evil mode
+;; ido mode
+;; Enable ido-mode
+(ido-mode 1)
+
+;; Enable ido-ubiquitous-mode
+(when (require 'ido-completing-read+ nil t)
+  (ido-ubiquitous-mode 1))
+
+;; Evil mode configuration
 (use-package evil
   :ensure t
   :init
@@ -60,13 +72,9 @@
   (setq evil-want-keybindings nil)
   :config
   (evil-mode 1))
-
-;; ido mode
-(ido-mode 1)
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
 (setq ido-use-filename-at-point 'guess)
-(ido-ubiquitous-mode 1)
 
 ;; undo tree
 
@@ -76,7 +84,5 @@
 ;;   (global-undo-tree-mode 1))
 
 ;; tab mode
-(setq-default tab-width 4
-         indent-tabs-mode nil)
-
-
+(setq-default tab-width 2
+              indent-tabs-mode nil)
