@@ -13,7 +13,10 @@ settings:
   colors.webpage.darkmode.algorithm:
     global: lightness-cielab
   colors.webpage.darkmode.enabled:
-    global: true
+    global: false
+  content.desktop_capture:
+    https://discord.com: true
+    https://meet.google.com: true
   content.javascript.clipboard:
     global: access
   content.media.audio_capture:

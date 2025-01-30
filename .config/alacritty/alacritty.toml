@@ -12,11 +12,11 @@ normal.style = "Medium"
 size = 16.0
 
 [cursor]
-style.shape = "Underline"
+style.shape = "Block"
 style.blinking = "Never"
 # vi_mode_style.shape = "Underline"
 # vi_mode_style.blinking = "Never"
 
 [general]
-import = ["/home/shashank/.cache/wal/alacritty-theme.toml"]
-# import = ["/home/shashank/.config/alacritty-theme/themes/carbonfox.toml"]
+# import = ["/home/shashank/.cache/wal/alacritty-theme.toml"]
+import = ["/home/shashank/.config/alacritty-theme/themes/carbonfox.toml"]

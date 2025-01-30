@@ -1,4 +1,3 @@
-;; this is cursom emacs file
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -6,12 +5,12 @@
  ;; If there is more than one, they won't work right.
  '(custom-enabled-themes '(modus-vivendi))
  '(custom-safe-themes
-   '("b5fd9c7429d52190235f2383e47d340d7ff769f141cd8f9e7a4629a81abc6b19" "e8bd9bbf6506afca133125b0be48b1f033b1c8647c628652ab7a2fe065c10ef0" "d481904809c509641a1a1f1b1eb80b94c58c210145effc2631c1a7f2e4a2fdf4" default))
- '(display-line-numbers 'relative)
+   '("7ec8fd456c0c117c99e3a3b16aaf09ed3fb91879f6601b1ea0eeaee9c6def5d9" "e4a702e262c3e3501dfe25091621fe12cd63c7845221687e36a79e17cf3a67e0" "10e5d4cc0f67ed5cafac0f4252093d2119ee8b8cb449e7053273453c1a1eb7cc" "4b6cc3b60871e2f4f9a026a5c86df27905fb1b0e96277ff18a76a39ca53b82e1" "48042425e84cd92184837e01d0b4fe9f912d875c43021c3bcb7eeb51f1be5710" "c1d5759fcb18b20fd95357dcd63ff90780283b14023422765d531330a3d3cec2" "dfb1c8b5bfa040b042b4ef660d0aab48ef2e89ee719a1f24a4629a0c5ed769e8" "8c7e832be864674c220f9a9361c851917a93f921fedb7717b1b5ece47690c098" "aec7b55f2a13307a55517fdf08438863d694550565dee23181d2ebd973ebd6b8" "13096a9a6e75c7330c1bc500f30a8f4407bd618431c94aeab55c9855731a95e1" "8b148cf8154d34917dfc794b5d0fe65f21e9155977a36a5985f89c09a9669aa0" "4ade6b630ba8cbab10703b27fd05bb43aaf8a3e5ba8c2dc1ea4a2de5f8d45882" "dccf4a8f1aaf5f24d2ab63af1aa75fd9d535c83377f8e26380162e888be0c6a9" "014cb63097fc7dbda3edf53eb09802237961cbb4c9e9abd705f23b86511b0a69" "b5fd9c7429d52190235f2383e47d340d7ff769f141cd8f9e7a4629a81abc6b19" "e8bd9bbf6506afca133125b0be48b1f033b1c8647c628652ab7a2fe065c10ef0" "d481904809c509641a1a1f1b1eb80b94c58c210145effc2631c1a7f2e4a2fdf4" default))
+ '(display-line-numbers t)
  '(evil-undo-system 'undo-redo)
  '(global-display-line-numbers-mode t)
  '(ido-use-virtual-buffers 'auto)
- '(package-selected-packages '(ido-completing-read+ evil)))
+ '(package-selected-packages '(evil-collection all-the-icons ido-completing-read+)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -37,8 +36,6 @@
 (global-set-key (kbd "C-x C-k") 'kill-buffer-and-window)
 (windmove-default-keybindings)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
-(with-eval-after-load 'dired
-  (define-key dired-mode-map (kbd "c") 'find-file))
 
 ;; for backup and autosaving
 (setq backup-directory-alist `((".*" . "~/.emacs.d/backups")))
@@ -48,40 +45,27 @@
 ;; disable lockfiles
 (setq create-lockfiles nil)
 
-;; configuring melpa
+;; configuring melpa and installing package thing
 (require 'package)
-
-;; Add package archives
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")
-                         ("gnu" . "https://elpa.gnu.org/packages/")))
+                         ("gnu" . "https://elpa.gnu.org/packages/")
+                         ("nongnu" . "https://elpa.nongnu.org/nongnu/")))
 (package-initialize)
+(unless package-archive-contents
+  (package-refresh-contents))
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+(eval-when-compile (require 'use-package))
+(require 'use-package)
+(setq use-package-always-ensure t)
 
 ;; ido mode
-;; Enable ido-mode
 (ido-mode 1)
-
-;; Enable ido-ubiquitous-mode
-(when (require 'ido-completing-read+ nil t)
-  (ido-ubiquitous-mode 1))
-
-;; Evil mode configuration
-(use-package evil
-  :ensure t
-  :init
-  (setq evil-want-integration t)
-  (setq evil-want-keybindings nil)
-  :config
-  (evil-mode 1))
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
 (setq ido-use-filename-at-point 'guess)
-
-;; undo tree
-
-;; (use-package undo-tree 
-;;   :ensure t
-;;   :config
-;;   (global-undo-tree-mode 1))
+(ido-ubiquitous-mode 1)
 
 ;; tab mode
 (setq-default tab-width 2
