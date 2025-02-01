@@ -10,7 +10,7 @@
  '(evil-undo-system 'undo-redo)
  '(global-display-line-numbers-mode t)
  '(ido-use-virtual-buffers 'auto)
- '(package-selected-packages '(evil-collection all-the-icons ido-completing-read+)))
+ '(package-selected-packages '(rust-mode tree-sitter-langs tree-sitter all-the-icons)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -35,6 +35,7 @@
 (global-set-key (kbd "C-c c") 'compile)
 (global-set-key (kbd "C-x C-k") 'kill-buffer-and-window)
 (windmove-default-keybindings)
+(global-set-key (kbd "M-w") 'copy-region-as-kill)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
 ;; for backup and autosaving
@@ -65,8 +66,59 @@
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
 (setq ido-use-filename-at-point 'guess)
-(ido-ubiquitous-mode 1)
 
 ;; tab mode
 (setq-default tab-width 2
               indent-tabs-mode nil)
+
+;; using treesitter because i will then get osm syntax highlighting
+(unless (package-installed-p 'tree-sitter)
+  (package-install 'tree-sitter))
+
+(unless (package-installed-p 'tree-sitter-langs)
+  (package-install 'tree-sitter-langs))
+
+
+
+;; Basic tree-sitter setup
+(require 'tree-sitter)
+(require 'tree-sitter-langs)
+
+;; Enable tree-sitter globally
+(global-tree-sitter-mode)
+
+;; Auto-enable tree-sitter for all supported languages
+(add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
+
+;; Function to automatically install missing grammars
+(defun my/tree-sitter-load-grammar ()
+  "Load tree-sitter grammar for current buffer if available."
+  (when (derived-mode-p 'prog-mode)
+    (when (not (tree-sitter-language))
+      (tree-sitter-require (intern (symbol-name major-mode)))))
+    (tree-sitter-mode 1))
+
+;; Add hook for automatic grammar installation
+(add-hook 'prog-mode-hook #'my/tree-sitter-load-grammar)
+
+;; Automatically use tree-sitter enhanced modes when available
+(setq major-mode-remap-alist
+      '((python-mode . python-ts-mode)
+        (c-mode . c-ts-mode)
+        (json-mode . json-ts-mode)
+        (rust-mode . rust-ts-mode)))
+
+(use-package rust-ts-mode
+  :ensure t
+  :mode "\\.rs\\'")
+
+
+(use-package c-ts-mode
+  :mode ("\\.c\\'" "\\.h\\'")
+  :init
+  ;; Install C grammar if not present
+  (unless (treesit-language-available-p 'c)
+    (treesit-install-language-grammar 'c))
+  :config
+  (setq c-ts-mode-indent-offset 4)
+  (setq c-ts-mode-indent-style 'gnu))
