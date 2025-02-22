@@ -18,10 +18,10 @@ set $up k
 set $right l
 set $term alacritty
 set $font JetBrainsMono NFM Bold
-set $menu rofi -show drun
+set $menu bemenu-run 'JetBrainsMono Nerd Font' -l 10 -H 1 --binding vim -i --fork --vim-esc-exits
 
 # setting font
-font pango:$font 13
+font pango:$font 10
 
 # default settings
 default_border pixel 2
@@ -82,18 +82,16 @@ bindsym XF86AudioMute exec pamixer -t
 bindsym XF86MonBrightnessDown exec brightnessctl s 5%-
 bindsym XF86MonBrightnessUp exec brightnessctl s +5%
 
-# my personal bindings
-bindsym $mod+y exec /home/sns/scripts/reload.sh
-
 # screenshots
-bindsym $mod+Shift+p exec /home/sns/scripts/save_screen.sh
-bindsym $mod+p exec /home/sns/scripts/copy_screen.sh
+bindsym $mod+Shift+p exec grim - | wl-copy
+bindsym $mod+p exec grim -g $(slurp -d) - | wl-copy
 
 # Start a terminal
 bindsym $mod+Return exec $term
 
 # power settings and shit
 bindsym $mod+Shift+o exec systemctl poweroff
+bindsym $mod+o exec swaylock --image ~/Pictures/Wallpapers/arch.jpg
 
 
 # Kill focused window
