@@ -21,14 +21,8 @@ set -gx XDG_CONFIG_HOME "$HOME/.config"
 set -gx BUN_INSTALL "$HOME/.bun"
 set -gx JAVA_HOME "/usr/lib/jvm/default"
 set -gx NVM_DIR "$HOME/.config/nvm"
-set -gx WEZTERM_GUI_BACKEND "wayland"
 set -gx WALLPAPER_DIR "$HOME/Pictures/Wallpapers"
-set -gx XDG_CURRENT_DESKTOP "Hyprland"
-set -gx BROWSER "qutebrowser"
 # set -gx EMACSDIR "$HOME/.config/emacs"
-
-# i can setup colorscheme for gvim
-set -gx GTK_THEME "Adwaita:dark gvim"
 
 # Personal projects and paths
 set -gx PATH "$HOME/.cargo/bin" $PATH

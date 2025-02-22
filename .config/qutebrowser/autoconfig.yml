@@ -13,7 +13,7 @@ settings:
   colors.webpage.darkmode.algorithm:
     global: lightness-cielab
   colors.webpage.darkmode.enabled:
-    global: false
+    global: true
   content.desktop_capture:
     https://discord.com: true
     https://meet.google.com: true
@@ -22,6 +22,8 @@ settings:
   content.media.audio_capture:
     global: true
   content.media.video_capture:
+    global: true
+  content.pdfjs:
     global: true
   fonts.default_family:
     global: JetBrainsMonoNL Nerd Font Mono

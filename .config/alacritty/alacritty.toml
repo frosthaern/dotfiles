@@ -7,9 +7,9 @@ decorations_theme_variant = "Dark"
 startup_mode = "Maximized"
 
 [font]
-normal.family = "Iosevka Nerd Font Mono"
+normal.family = "JetBrainsMono NFM"
 normal.style = "Medium"
-size = 16.0
+size = 13.0
 
 [cursor]
 style.shape = "Block"
