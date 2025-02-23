@@ -92,7 +92,7 @@ bindsym $mod+Return exec $term
 
 # power settings and shit
 bindsym $mod+Shift+o exec systemctl poweroff
-bindsym $mod+o exec swaylock --image ~/Pictures/Wallpapers/arch.jpg
+bindsym $mod+o exec swaylock --image ~/Pictures/Wallpapers/arch.png
 
 
 # Kill focused window
