@@ -19,4 +19,4 @@ style.blinking = "Never"
 
 [general]
 # import = ["/home/shashank/.cache/wal/alacritty-theme.toml"]
-import = ["/home/shashank/.config/alacritty-theme/themes/carbonfox.toml"]
+import = ["/home/shashank/.config/alacritty/alacritty-theme/themes/carbonfox.toml"]

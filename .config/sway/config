@@ -18,7 +18,8 @@ set $up k
 set $right l
 set $term alacritty
 set $font JetBrainsMono NFM Bold
-set $menu bemenu-run 'JetBrainsMono Nerd Font' -l 10 -H 1 --binding vim -i --fork --vim-esc-exits
+# set $menu bemenu-run 'JetBrainsMono NFM' -l 10 -H 1 --binding vim -i --fork --vim-esc-exits
+set $menu rofi -show drun
 
 # setting font
 font pango:$font 10
@@ -84,7 +85,7 @@ bindsym XF86MonBrightnessUp exec brightnessctl s +5%
 
 # screenshots
 bindsym $mod+Shift+p exec grim - | wl-copy
-bindsym $mod+p exec grim -g $(slurp -d) - | wl-copy
+bindsym $mod+p exec grim -g "$(slurp -d)" - | wl-copy
 
 # Start a terminal
 bindsym $mod+Return exec $term

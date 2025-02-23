@@ -1,9 +1,9 @@
 configuration {
   modes: "run,drun,window";
   combi-modes: [window, drun, run];
-  width: 50;
-  lines: 15;
-  font: "JetBrainsMonoNL Nerd Font Mono 12";
+  width: 100;
+  lines: 10;
+  font: "JetBrainsMono NFM 10";
   yoffset: 10;
   xoffset: 10;
   fixed-num-lines: true;

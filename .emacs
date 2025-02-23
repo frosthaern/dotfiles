@@ -117,6 +117,10 @@ If no grammar is available, do nothing (or log a message)."
 ;; Add hook for automatic grammar installation
 (add-hook 'prog-mode-hook #'my/tree-sitter-load-grammar)
 
+;; doom themes
+(use-package doom-themes 
+  :ensure t)
+
 ;; installing auto treesitter language
 (use-package treesit-auto
   :ensure t

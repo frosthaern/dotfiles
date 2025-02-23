@@ -27,10 +27,12 @@
 }
 
 window#waybar {
-    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
     color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
+    border: 2px solid white;
+    margin: 3px;
+    box-shadow: 0 0 0 3px white; /* White border effect */
 }
 
 window#waybar.hidden {

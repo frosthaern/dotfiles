@@ -127,3 +127,4 @@ recv() {
     curl https://0x0.st/$1 -o $2
 }
 
+. "$HOME/.cargo/env"
