@@ -1,13 +1,11 @@
+# for colorscheme
+include ~/.cache/wal/colors-sway
+
 # startup things
 exec --no-startup-id swaybg -i "$wallpaper" -m fill
 exec --no-startup-id swaync
 exec --no-startup-id waybar
 exec --no-startup-id wal -R
-# exec --no-startup-id toff
-exec swaybg -i ~/Pictures/Wallpapers/arch.jpg -m fill
-
-# for colorscheme
-include ~/.cache/wal/colors-sway
 
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
@@ -18,7 +16,6 @@ set $up k
 set $right l
 set $term alacritty
 set $font JetBrainsMono NFM Bold
-# set $menu bemenu-run 'JetBrainsMono NFM' -l 10 -H 1 --binding vim -i --fork --vim-esc-exits
 set $menu rofi -show drun
 
 # setting font
@@ -63,7 +60,7 @@ input "1739:52861:SYNA32C6:00_06CB:CE7D_Touchpad" {
         natural_scroll enabled
         middle_emulation enabled
         accel_profile "adaptive"
-        pointer_accel 1
+        pointer_accel 0.1
 }
 
 input "1739:52861:SYNA32C6:00_06CB:CE7D_Mouse" {
@@ -80,8 +77,8 @@ input "1739:52861:SYNA32C6:00_06CB:CE7D_Mouse" {
 bindsym XF86AudioRaiseVolume exec pamixer -i 5
 bindsym XF86AudioLowerVolume exec pamixer -d 5
 bindsym XF86AudioMute exec pamixer -t
-bindsym XF86MonBrightnessDown exec brightnessctl s 5%-
-bindsym XF86MonBrightnessUp exec brightnessctl s +5%
+bindsym XF86MonBrightnessDown exec brightnessctl s 2%-
+bindsym XF86MonBrightnessUp exec brightnessctl s +2%
 
 # screenshots
 bindsym $mod+Shift+p exec grim - | wl-copy
@@ -91,8 +88,7 @@ bindsym $mod+p exec grim -g "$(slurp -d)" - | wl-copy
 bindsym $mod+Return exec $term
 
 # power settings and shit
-bindsym $mod+Shift+o exec systemctl poweroff
-bindsym $mod+o exec swaylock --image ~/Pictures/Wallpapers/arch.png
+bindsym $mod+o exec swaylock --image $wallpaper
 
 
 # Kill focused window
@@ -102,7 +98,7 @@ bindsym $mod+q kill
 bindsym $mod+d exec $menu
 
 floating_modifier $mod normal
-bindsym $mod+Shift+c exec swaymsg reload
+bindsym $mod+Shift+c exec "swaymsg reload"
 bindsym $mod+Shift+q exec swaymsg exit
 
 

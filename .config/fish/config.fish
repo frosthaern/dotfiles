@@ -22,7 +22,7 @@ set -gx BUN_INSTALL "$HOME/.bun"
 set -gx JAVA_HOME "/usr/lib/jvm/default"
 set -gx NVM_DIR "$HOME/.config/nvm"
 set -gx WALLPAPER_DIR "$HOME/Pictures/Wallpapers"
-# set -gx EMACSDIR "$HOME/.config/emacs"
+set -gx XDG_CURRENT_DESKTOP "sway"
 
 # Personal projects and paths
 set -gx PATH "$HOME/.cargo/bin" $PATH
@@ -50,6 +50,7 @@ alias mc='java -jar ~/SKlauncher-3.2.8.jar'
 alias zf='zathura ~/$(fzf)'
 alias mp3='yt-dlp -x "$1" --audio-format mp3'
 alias nv='nvim -u ~/.config/kickstart.nvim/init.lua $1'
+alias mc='java -jar /home/shashank/mc.jar'
 
 # Important system aliases
 alias gmute='pamixer --get-mute'
