@@ -60,7 +60,7 @@
 (setq visual-bell t)
 (column-number-mode t)
 (set-face-attribute 'default nil
-		    :family "Iosevka Nerd Font Mono"
+		    :family "Iosevka NFM"
 		    :height 140
 		    :slant 'normal)
 

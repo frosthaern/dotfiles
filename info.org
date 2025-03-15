@@ -1,0 +1,61 @@
+#+AUTHOR: shashank
+#+STARTUP: fold
+
+* todo
+- do leetcode first thing in the morning
+- then play chess and learn some openings
+- then practice some mcsr
+** ai related
+- Here’s a list of the main research topics (project proposals) covered in the PDF:
+- Statistical Analysis of Attention Head Activations in Code Retrieval
+- Layer-wise Embedding Interpretability in Code Search
+- Uncovering Latent Programming Concepts in BERT-Based Models
+- Comparative Study of BERT Variants for Code Retrieval
+- Comparing Embeddings for Secure vs. Insecure Code
+- Embedding-Based Detection and Classification of Bad Code
+- Comparative Analysis of Code Metrics Across Programming Languages
+- Each topic dives into different aspects of how BERT-based models work with code, from understanding internal attention mechanisms to comparing code metrics across languages. These are the areas you’d need to learn, even if you’re starting from scratch.
+
+** presentation and 3d modelling using something
+
+* timetable
+| monday    | cc      | bc      | ml          | m and e     | open elective |
+| tuesday   | nothing | ml      | devopslab   | devopslab   | open elective |
+| wednesday | ml      | m and l | cc          | bc          | open elective |
+| thursday  | nothing | m and e | ml lab      | ml lab      | mini project  |
+| friday    | bc      | cc      | ml tutorial | ml tutorial | mini project  |
+
+* project descriptions
+** make a program to token generator
+- why: because give whole code to llm is just too much context
+- make bytecode such that the idea of the whole program stays
+- all important methods and functions stays
+- but useless things should not stay
+- make plan
+- make project
+- so that you can help decrease the load on llm companies
+- read that massive distributed computing book
+- read that compiler book
+
+** mohit's winkel ( trading platform for ramaiah )
+- Landing page
+- Auth (you can customize or use clerk one only)
+- Feed for listings
+- way to view each listing
+- viewing profile
+- creating a post in the feed
+- carousels for viewing multiple images in the listing
+- displaying listing attributes
+- either session token or jwt should have first and last name, ID from clerk (which will be stored in db) and whatever else is required.
+- phone number for doing communication and they will meet and do trade and not in our platform
+- the above is more or less specification
+- a dashboard for controlling what items are there
+- a good ui is important
+
+** python script for pywal chromium
+- just write an extension and use that python library to change colorscheme
+
+
+** implement what tsoding is doing right no
+- or read a fucking book and implement shit from there
+- like crafting interpreters or some shit like that
