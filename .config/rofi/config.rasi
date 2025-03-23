@@ -8,7 +8,7 @@ configuration {
   xoffset: 10;
   fixed-num-lines: true;
   show-icons: true;
-  terminal: "kitty";
+  terminal: "alacritty";
   drun-match-fields: "name,generic,exec,categories,keywords";
   drun-url-launcher: "xdg-open";
   drun-display-format: "{name}";

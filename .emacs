@@ -1,3 +1,7 @@
+;;; .emacs --- Your personal Emacs configuration
+;;; Commentary:
+;;; Code:
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -35,13 +39,11 @@
      "d481904809c509641a1a1f1b1eb80b94c58c210145effc2631c1a7f2e4a2fdf4"
      default))
  '(display-line-numbers 'relative)
- '(evil-undo-system 'undo-redo)
  '(ido-use-virtual-buffers 'auto)
  '(package-selected-packages
-   '(all-the-icons cape corfu eglot evil evil-collection
-		   evil-nerd-commenter evil-org ido-vertical-mode
-		   rust-mode smex tree-sitter tree-sitter-langs
-		   treesit-auto vertico)))
+   '(all-the-icons cape corfu eglot rust-mode tree-sitter
+		   tree-sitter-langs treesit-auto vertico))
+ '(treesit-auto-install t nil nil "Customized with use-package treesit-auto"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -49,7 +51,7 @@
  ;; If there is more than one, they won't work right.
  )
 
-;; this is the normal shit
+;; this is the normal configuration
 (tool-bar-mode -1)
 (server-start)
 (scroll-bar-mode -1)
@@ -57,33 +59,32 @@
 (show-paren-mode 1)
 (setq inhibit-startup-screen t)
 (set-fringe-mode 10)
-(setq visual-bell t)
+(global-font-lock-mode 1)
 (column-number-mode t)
 (set-face-attribute 'default nil
-		    :family "Iosevka NFM"
-		    :height 140
-		    :slant 'normal)
+                    :family "Iosevka NFM"
+                    :height 140
+                    :slant 'normal)
 
 ;; starting to set keybindings now
 (keymap-global-set "C-c c" 'compile)
 (keymap-global-set "C-x C-k" 'kill-buffer-and-window)
 (keymap-global-set "C-x C-b" 'ibuffer)
-(keymap-global-set "C-j" 'windmove-down)
-(keymap-global-set "C-l" 'windmove-right)
-(keymap-global-set "C-h" 'windmove-left)
-(keymap-global-set "C-k" 'windmove-up)
+(keymap-global-set "M-j" 'windmove-down)
+(keymap-global-set "M-l" 'windmove-right)
+(keymap-global-set "M-h" 'windmove-left)
+(keymap-global-set "M-k" 'windmove-up)
 
 
 ;; making sure these dirs exist
 (dolist (dir '("~/.emacs.d/backups" "~/.emacs.d/autosaves"))
   (unless (file-exists-p dir)
     (make-directory dir t)))
-
+    
 ;; for backup and autosaving
 (setq backup-directory-alist `((".*" . "~/.emacs.d/backups")))
 (setq backup-by-copying t) ;; Avoid file renaming for backups
 (setq auto-save-file-name-transforms `((".*" "~/.emacs.d/autosaves/" t)))
-
 ;; disable lockfiles
 (setq create-lockfiles nil)
 
@@ -94,134 +95,109 @@
                          ("nongnu" . "https://elpa.nongnu.org/nongnu/")))
 (package-initialize)
 
+(unless package-archive-contents
+  (package-refresh-contents))
+
 (unless (package-installed-p 'use-package)
-  (package-refresh-contents)
   (package-install 'use-package))
 
 (require 'use-package)
 (setq use-package-always-ensure t)
 
-;; ido shit
-(require 'ido-vertical-mode)
-(ido-vertical-mode 1)
-
-;; ido mode
+;; ido configuration
+(require 'ido)
 (ido-mode 1)
 (setq ido-enable-flex-matching t)
 (ido-everywhere 1)
 (setq ido-use-filename-at-point 'guess)
 
-;; smex init
-(use-package smex
+;; Tree-sitter configuration
+(use-package tree-sitter
   :ensure t
-  :config  (smex-initialize)
-  (keymap-global-set "M-x" 'smex))
+  :config
+  (when (fboundp 'global-tree-sitter-mode)
+    (global-tree-sitter-mode 1))
+  :init
+  (defvar tree-sitter-hl-mode nil
+    "Tree-sitter highlighting mode."))
 
-;; using treesitter because i will then get osm syntax highlighting
-(unless (package-installed-p 'tree-sitter)
-  (package-install 'tree-sitter))
+(use-package tree-sitter-langs
+  :ensure t
+  :after tree-sitter
+  :config
+  (when (fboundp 'tree-sitter-hl-mode)
+    (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)))
 
-(unless (package-installed-p 'tree-sitter-langs)
-  (package-install 'tree-sitter-langs))
-
-;; fuck lsp i don't need lsp
-
-;; Basic tree-sitter setup
-(require 'tree-sitter)
-(require 'tree-sitter-langs)
-
-;; Enable tree-sitter globally
-(global-tree-sitter-mode 1)
-
-;; Auto-enable tree-sitter for all supported languages
-(add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
+;; hook for flymake
+(add-hook 'prog-mode-hook 'flymake-mode)
 
 ;; installing auto treesitter language
 (use-package treesit-auto
   :ensure t
   :config
-  (global-treesit-auto-mode))
+  (when (fboundp 'global-treesit-auto-mode)
+    (global-treesit-auto-mode))
+  :custom
+  (treesit-auto-install 'prompt))
 
-;; configuring)
-(setq treesit-auto-install 'force)
+;; for rust
+(add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-ts-mode))
+(setq treesit-font-lock-level 4)
 
-;; making sure of the below problem
-(setq evil-want-keybinding nil)
-
-;; Install Evil and Evil-Collection
-(use-package evil
-  :ensure t
-  :config
-  (evil-mode 1))  ;; Enable Evil mode globally
-
-(use-package evil-collection
-  :ensure t
-  :config
-  (evil-collection-init))  ;; Initialize Evil keybindings for all packages
-
-;; Make sure keybindings work in all modes, including minibuffer
-(add-hook 'minibuffer-setup-hook #'evil-local-mode)
-
-;; Specific mode keybinding configuration
-(use-package evil-org
-  :ensure t
-  :config
-  (add-hook 'org-mode-hook #'evil-org-mode))  ; Org-mode with Evil bindings
-
-(use-package evil-nerd-commenter
-  :ensure t)  ;; Enables Evil keybindings for commenting
-
-;; Optional: Specific keybindings for dired or other packages
-(use-package evil-collection
-  :ensure t
-  :config
-  (evil-collection-init 'dired))  ;; Dired with Evil bindings
+;; download rust-mode
+(use-package rust-mode
+  :ensure t)
+(add-to-list 'exec-path "~/.cargo/bin/")
 
 ;; lsp for c
 (use-package eglot
   :ensure t
-  :hook ((c-ts-mode c++-ts-mode python-ts-mode rust-ts-mode) . eglot-ensure))
+  :hook ((c-ts-mode c++-ts-mode python-ts-mode rust-ts-mode js-ts-mode) . eglot-ensure))
 
-;; cape is like cmp and shit for file paths and shit
+;; cape for completion
 (use-package cape
+  :ensure t
   :init
+  ;; Ensure cape functions are defined
+  (declare-function cape-dabbrev "cape")
+  (declare-function cape-file "cape")
+  (declare-function cape-symbol "cape")
+  (declare-function cape-keyword "cape")
+  
   (add-hook 'prog-mode-hook
-	  (lambda ()
-	      (add-to-list 'completion-at-point-functions #'cape-dabbrev)
-	      (add-to-list 'completion-at-point-functions #'cape-file)
-	      (add-to-list 'completion-at-point-functions #'cape-symbol)
-	      (add-to-list 'completion-at-point-functions #'cape-keyword))))
-
+          (lambda ()
+              (when (fboundp 'cape-dabbrev)
+                (add-to-list 'completion-at-point-functions #'cape-dabbrev))
+              (when (fboundp 'cape-file)
+                (add-to-list 'completion-at-point-functions #'cape-file))
+              (when (fboundp 'cape-symbol)
+                (add-to-list 'completion-at-point-functions #'cape-symbol))
+              (when (fboundp 'cape-keyword)
+                (add-to-list 'completion-at-point-functions #'cape-keyword)))))
 
 ;; completion for c and python
 (use-package corfu
   :ensure t
   :init
-  (global-corfu-mode)
-  (setq corfu-auto t
-	corfu-cycle t ;; for cycling through completions
-	corfu-auto-prefix 2   ;; Start completing after 2 chars
-	corfu-auto-delay 0.0)) ;; No delay
+  (when (fboundp 'global-corfu-mode)
+    (global-corfu-mode))
+  :custom
+  (corfu-auto nil)
+  (corfu-cycle t) ;; for cycling through completions
+  (corfu-auto-prefix 2)   ;; Start completing after 2 chars
+  (corfu-auto-delay 0.0)) ;; No delay
 
-;; Enable TAB completion
-(define-key corfu-map (kbd "TAB") 'corfu-next)
-(define-key corfu-map (kbd "<backtab>") 'corfu-previous)
+;; completion at point, i hate automatic completion
+(keymap-global-set "M-TAB" #'completion-at-point)
 
 ;; better ido mode it seems
 (use-package vertico
   :ensure t
   :init
-  (vertico-mode)
-  (setq vertico-cycle t)) ;; Allows cycling through candidates
+  (when (fboundp 'vertico-mode)
+    (vertico-mode))
+  :custom
+  (vertico-cycle t)) ;; Allows cycling through candidates
 
-;; for rust
-(use-package rust-mode
-  :ensure t
-  :mode "\\.rs\\'")
-
-;; Configure tree-sitter for Rust syntax highlighting
-(when (treesit-available-p)
-  (treesit-install-language-grammar 'rust))
-
-;; Use tree-sitter mode for Rust files if available (Emacs 29+)
-(add-to-list 'major-mode-remap-alist '(rust-mode . rust-ts-mode))
+(provide 'init)
+;;; .emacs ends here
