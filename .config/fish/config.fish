@@ -23,6 +23,7 @@ set -gx JAVA_HOME "/usr/lib/jvm/default"
 set -gx NVM_DIR "$HOME/.config/nvm"
 set -gx WALLPAPER_DIR "$HOME/Pictures/Wallpapers"
 set -gx XDG_CURRENT_DESKTOP "sway"
+set -gx JAVA_HOME "/usr/lib/jvm/java-24-openjdk"
 
 # Personal projects and paths
 set -gx PATH "$HOME/.cargo/bin" $PATH
@@ -36,6 +37,7 @@ set -gx PATH "$JAVA_HOME/bin" $PATH
 set -gx PATH "$HOME/Code/todo-rs/target/release" $PATH
 set -gx PATH "$HOME/Codey/pass-rs/target/release" $PATH
 set -gx PATH "$HOME/Code/suburl_crawler_py" $PATH
+set -gx PATH "$JAVA_HOME/bin" $PATH
 
 # Aliases
 alias l='lsd -l --color=auto'
@@ -129,4 +131,14 @@ function recv
 
 end
 
-set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME ; set -gx PATH $HOME/.cabal/bin $PATH /home/shashank/.ghcup/bin # ghcup-env
+
+
+set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME ; set -gx PATH $HOME/.cabal/bin /home/shashank/.ghcup/bin $PATH # ghcup-env
+
+# BEGIN opam configuration
+# This is useful if you're using opam as it adds:
+#   - the correct directories to the PATH
+#   - auto-completion for the opam binary
+# This section can be safely removed at any time if needed.
+test -r '/home/shashank/.opam/opam-init/init.fish' && source '/home/shashank/.opam/opam-init/init.fish' > /dev/null 2> /dev/null; or true
+# END opam configuration
