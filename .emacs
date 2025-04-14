@@ -1,4 +1,4 @@
-;;; .emacs --- Your personal Emacs configuration
+;; -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; Code:
 
@@ -11,7 +11,7 @@
  '(custom-safe-themes '(default))
  '(display-line-numbers 'relative)
  '(ido-use-virtual-buffers 'auto)
- '(package-selected-packages '(all-the-icons cape haskell-mode rust-mode smex)))
+ '(package-selected-packages '(all-the-icons corfu smex)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -19,7 +19,6 @@
  ;; If there is more than one, they won't work right.
  )
 
-;; this is the normal configuration
 (tool-bar-mode -1)
 (server-start)
 (scroll-bar-mode -1)
@@ -31,38 +30,31 @@
 (column-number-mode t)
 (set-face-attribute 'default nil
                     :family "Iosevka NFM"
-                    :height 140
+                    :height 130
                     :slant 'normal)
 
-;; starting to set keybindings now
 (keymap-global-set "C-c c" 'compile)
-(keymap-global-set "C-x C-k" 'kill-buffer-and-window)
-(keymap-global-set "C-x C-b" 'ibuffer)
 (keymap-global-set "M-j" 'windmove-down)
 (keymap-global-set "M-l" 'windmove-right)
 (keymap-global-set "M-h" 'windmove-left)
 (keymap-global-set "M-k" 'windmove-up)
+(keymap-global-set "C-S-k" 'org-metaup)
+(keymap-global-set "C-S-j" 'org-metadown)
 
 
-;; making sure these dirs exist
 (dolist (dir '("~/.emacs.d/backups" "~/.emacs.d/autosaves"))
   (unless (file-exists-p dir)
     (make-directory dir t)))
-    
-;; for backup and autosaving
 (setq backup-directory-alist `((".*" . "~/.emacs.d/backups")))
-(setq backup-by-copying t) ;; Avoid file renaming for backups
+(setq backup-by-copying t)
 (setq auto-save-file-name-transforms `((".*" "~/.emacs.d/autosaves/" t)))
-;; disable lockfiles
 (setq create-lockfiles nil)
 
-;; configuring melpa and installing package thing
 (require 'package)
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")
                          ("gnu" . "https://elpa.gnu.org/packages/")
                          ("nongnu" . "https://elpa.nongnu.org/nongnu/")))
 (package-initialize)
-
 (unless package-archive-contents
   (package-refresh-contents))
 
@@ -73,12 +65,47 @@
 (setq use-package-always-ensure t)
 
 ;; ido configuration
-(require 'ido)
-(ido-mode 1)
-(setq ido-enable-flex-matching t)
-(ido-everywhere 1)
-(setq ido-use-filename-at-point 'guess)
+(use-package ido
+  :demand t
+  :init
+  (setq ido-enable-flex-matching t
+        ido-use-filename-at-point 'guess)
+  :config
+  (ido-mode t)
+  (ido-everywhere t))
+
 (add-hook 'prog-mode-hook 'flymake-mode)
+
+(use-package flymake
+  :demand t
+  :hook (prog-mode . flymake-mode)
+  :init
+  (setq flymake-no-changes-timeout 0.3
+	flymake-start-on-save-buffer t
+	flymake-start-on-flymake-mode t))
+
+(use-package corfu
+  :ensure t
+  :demand t
+  :custom
+  (corfu-auto nil)                 ;; Disable automatic completion
+  (corfu-cycle t)                  ;; Enable cycling through candidates
+  (corfu-preselect 'prompt)        ;; Preselection behavior
+  (corfu-count 10)                 ;; Show up to 10 candidates
+  :bind
+  ("M-TAB" . completion-at-point)
+  :init
+  (global-corfu-mode))
+
+;; Install and configure Cape for better completion backends
+(use-package cape
+  :ensure t
+  :after corfu
+  :demand t
+  :init
+  (add-to-list 'completion-at-point-functions #'cape-file)
+  (add-to-list 'completion-at-point-functions #'cape-dabbrev)
+  (add-to-list 'completion-at-point-functions #'cape-keyword))
 
 (use-package smex
   :ensure t
