@@ -7,11 +7,11 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-enabled-themes '(modus-vivendi))
+ '(custom-enabled-themes '(modus-vivendi-tritanopia))
  '(custom-safe-themes '(default))
  '(display-line-numbers 'relative)
  '(ido-use-virtual-buffers 'auto)
- '(package-selected-packages '(all-the-icons corfu smex)))
+ '(package-selected-packages '(all-the-icons corfu drag-stuff smex)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -29,8 +29,8 @@
 (global-font-lock-mode 1)
 (column-number-mode t)
 (set-face-attribute 'default nil
-                    :family "Iosevka NFM"
-                    :height 130
+                    :family "JetBrainsMono NFM"
+                    :height 100
                     :slant 'normal)
 
 (keymap-global-set "C-c c" 'compile)
@@ -38,8 +38,10 @@
 (keymap-global-set "M-l" 'windmove-right)
 (keymap-global-set "M-h" 'windmove-left)
 (keymap-global-set "M-k" 'windmove-up)
-(keymap-global-set "C-S-k" 'org-metaup)
-(keymap-global-set "C-S-j" 'org-metadown)
+(add-hook 'org-mode-hook
+          (lambda ()
+            (local-set-key (kbd "C-S-k") 'org-metaup)
+            (local-set-key (kbd "C-S-j") 'org-metadown)))
 
 
 (dolist (dir '("~/.emacs.d/backups" "~/.emacs.d/autosaves"))
@@ -64,7 +66,6 @@
 (require 'use-package)
 (setq use-package-always-ensure t)
 
-;; ido configuration
 (use-package ido
   :demand t
   :init
@@ -83,6 +84,13 @@
   (setq flymake-no-changes-timeout 0.3
 	flymake-start-on-save-buffer t
 	flymake-start-on-flymake-mode t))
+
+(use-package drag-stuff
+  :ensure t
+  :config
+  (drag-stuff-global-mode 1)
+  :bind (("C-S-k" . drag-stuff-up)
+         ("C-S-j" . drag-stuff-down)))
 
 (use-package corfu
   :ensure t
