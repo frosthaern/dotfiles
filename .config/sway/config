@@ -17,6 +17,7 @@ set $right l
 set $term alacritty
 set $font JetBrainsMono NFM Bold
 set $menu rofi -show drun
+output eDP-1 scale 1.5
 
 # setting font
 font pango:$font 10
@@ -57,7 +58,6 @@ client.urgent           $color9   $color3   $color15  $color11
 input "1739:52861:SYNA32C6:00_06CB:CE7D_Touchpad" {
         dwt enabled
         tap enabled
-        natural_scroll enabled
         middle_emulation enabled
         accel_profile "adaptive"
         pointer_accel 0.1

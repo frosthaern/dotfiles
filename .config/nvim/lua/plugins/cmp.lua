@@ -45,6 +45,7 @@ return {
 					end
 				end, { "i", "s" }),
 			}),
+
 			sources = {
 				{
 					name = "lazydev",
@@ -55,6 +56,36 @@ return {
 				{ name = "luasnip" },
 				{ name = "path" },
 			},
+
+			cmp.setup.filetype('gitcommit', {
+				sources = cmp.config.sources({
+					{ name = 'git' },
+				}, {
+					{ name = 'buffer' },
+				})
+			}),
+
+			cmp.setup.cmdline({ '/', '?' }, {
+				mapping = cmp.mapping.preset.cmdline(),
+				sources = {
+					{ name = 'buffer' }
+				}
+			}),
+
+			cmp.setup.cmdline(':', {
+				mapping = cmp.mapping.preset.cmdline(),
+				sources = cmp.config.sources({
+					{ name = 'path' }
+				}, {
+					{ name = 'cmdline' }
+				}),
+			}),
+
+			-- local capabilities = require('cmp_nvim_lsp').default_capabilities()
+			-- require('lspconfig')['<YOUR_LSP_SERVER>'].setup {
+			--   capabilities = capabilities
+			-- }
+
 		})
 	end,
 }

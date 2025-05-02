@@ -7,7 +7,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-enabled-themes '(modus-vivendi-tritanopia))
+ '(custom-enabled-themes '(modus-vivendi))
  '(custom-safe-themes '(default))
  '(display-line-numbers 'relative)
  '(ido-use-virtual-buffers 'auto)
@@ -28,9 +28,10 @@
 (set-fringe-mode 10)
 (global-font-lock-mode 1)
 (column-number-mode t)
+(toggle-truncate-lines t)
 (set-face-attribute 'default nil
                     :family "JetBrainsMono NFM"
-                    :height 100
+                    :height 150
                     :slant 'normal)
 
 (keymap-global-set "C-c c" 'compile)
@@ -38,6 +39,8 @@
 (keymap-global-set "M-l" 'windmove-right)
 (keymap-global-set "M-h" 'windmove-left)
 (keymap-global-set "M-k" 'windmove-up)
+(keymap-global-set "C--" 'text-scale-decrease)
+(keymap-global-set "C-+" 'text-scale-increase)
 (add-hook 'org-mode-hook
           (lambda ()
             (local-set-key (kbd "C-S-k") 'org-metaup)

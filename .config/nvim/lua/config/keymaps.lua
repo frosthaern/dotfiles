@@ -39,10 +39,10 @@ vim.keymap.set(
 )
 
 --tabbing and terminaling
--- vim.keymap.set("n", "<M-t>", ":tabnew<CR>", { desc = "create a new tab" })
--- vim.keymap.set("n", "<M-l>", ":tabnext<CR>", { desc = "move to next tab" })
--- vim.keymap.set("n", "<M-h>", ":tabprevious<CR>", { desc = "move to previous tab" })
--- vim.keymap.set("n", "<M-q>", ":close<CR>", { desc = "close current tab" })
+vim.keymap.set("n", "<leader>ta", ":tabnew<CR>", { desc = "create a new tab" })
+vim.keymap.set("n", "<leader>l", ":tabnext<CR>", { desc = "move to next tab" })
+vim.keymap.set("n", "<leader>h", ":tabprevious<CR>", { desc = "move to previous tab" })
+vim.keymap.set("n", "<leader>q", ":close<CR>", { desc = "close current tab" })
 
 -- resizing
 vim.keymap.set('n', '<C-Down>', '<CMD>resize -2<CR>', { desc = 'decrease the tab area' })

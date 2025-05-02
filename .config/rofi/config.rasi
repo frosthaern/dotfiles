@@ -3,7 +3,7 @@ configuration {
   combi-modes: [window, drun, run];
   width: 100;
   lines: 10;
-  font: "JetBrainsMono NFM 10";
+  font: "JetBrainsMono NFM 13";
   yoffset: 10;
   xoffset: 10;
   fixed-num-lines: true;

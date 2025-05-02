@@ -38,6 +38,7 @@ set -gx PATH "$HOME/Code/todo-rs/target/release" $PATH
 set -gx PATH "$HOME/Codey/pass-rs/target/release" $PATH
 set -gx PATH "$HOME/Code/suburl_crawler_py" $PATH
 set -gx PATH "$JAVA_HOME/bin" $PATH
+set -gx PATH "$HOME/Apps" $PATH
 
 # Aliases
 alias l='lsd -l --color=auto'
@@ -49,6 +50,8 @@ alias mc='java -jar ~/SKlauncher-3.2.8.jar'
 # alias toff='echo "1" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo'
 # alias ton='echo "0" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo'
 # alias tshow='cat /sys/devices/system/cpu/intel_pstate/no_turbo'
+alias speedtest='curl -w "\n\nTime: %{time_total}s\nDownload: %{speed_download} bytes/sec\nSize: %{size_download} bytes\n" -o /dev/null -s'
+alias aria='aria2c --enable-mmap --file-allocation=none -x 16 -s 16 -k 1M'
 alias zf='zathura ~/$(fzf)'
 alias mp3='yt-dlp -x "$1" --audio-format mp3'
 alias nv='nvim -u ~/.config/kickstart.nvim/init.lua $1'
