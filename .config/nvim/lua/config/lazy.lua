@@ -51,5 +51,6 @@ require('lazy').setup({
     { import = 'plugins.autopairs' },
     { import = 'plugins.rosepine' },
     { import = 'plugins.image' },
+    { import = 'plugins.aura' },
   }
 })

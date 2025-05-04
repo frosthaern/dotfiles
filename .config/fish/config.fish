@@ -22,7 +22,9 @@ set -gx BUN_INSTALL "$HOME/.bun"
 set -gx JAVA_HOME "/usr/lib/jvm/default"
 set -gx NVM_DIR "$HOME/.config/nvm"
 set -gx WALLPAPER_DIR "$HOME/Pictures/Wallpapers"
-set -gx XDG_CURRENT_DESKTOP "sway"
+set -gx XDG_CURRENT_DESKTOP sway
+# set -gx WAYLAND_DISPLAY wayland-1
+# set -gx SWAYSOCK /run/user/1000/sway-ipc.1000.1133.sock
 set -gx JAVA_HOME "/usr/lib/jvm/java-24-openjdk"
 
 # Personal projects and paths
@@ -47,15 +49,13 @@ alias grep='grep --color=auto'
 alias convertpngtojpg='mogrify -format jpg *.png'
 alias vate='source .venv/bin/activate.fish'
 alias mc='java -jar ~/SKlauncher-3.2.8.jar'
-# alias toff='echo "1" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo'
-# alias ton='echo "0" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo'
-# alias tshow='cat /sys/devices/system/cpu/intel_pstate/no_turbo'
 alias speedtest='curl -w "\n\nTime: %{time_total}s\nDownload: %{speed_download} bytes/sec\nSize: %{size_download} bytes\n" -o /dev/null -s'
 alias aria='aria2c --enable-mmap --file-allocation=none -x 16 -s 16 -k 1M'
 alias zf='zathura ~/$(fzf)'
 alias mp3='yt-dlp -x "$1" --audio-format mp3'
 alias nv='nvim -u ~/.config/kickstart.nvim/init.lua $1'
 alias mc='java -jar /home/shashank/mc.jar'
+alias fontlist='fc-list :family | uniq | sort | rg'
 
 # Important system aliases
 alias gmute='pamixer --get-mute'
