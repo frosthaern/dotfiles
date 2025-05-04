@@ -20,7 +20,7 @@ set $right l
 set $term alacritty
 set $font JetBrainsMono NFM Bold
 set $menu rofi -show drun
-output eDP-1 scale 1.5
+output eDP-1 scale 2
 
 # setting font
 font pango:$font 10

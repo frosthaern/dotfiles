@@ -13,9 +13,8 @@ startup_mode = "Maximized"
 # primary.background = "#000000"
 
 [font]
-normal.family = "FiraCodeNerdFontMono"
-normal.style = "Regular"
-# italic.family = "FiraCodeNerdFontMono"
+normal.family = "Iosevka"
+normal.style = "SemiBold"
 italic.style = "Regular"
 size = 14.0
 
