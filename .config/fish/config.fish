@@ -42,6 +42,8 @@ set -gx PATH "$HOME/Code/suburl_crawler_py" $PATH
 set -gx PATH "$JAVA_HOME/bin" $PATH
 set -gx PATH "$HOME/Apps" $PATH
 
+set fish_vi_force_cursor 1
+set fish_cursor_insert "block"
 # Aliases
 alias grep='grep --color=auto'
 alias convertpngtojpg='mogrify -format jpg *.png'
@@ -71,31 +73,6 @@ function gc
 end
 alias gcd='git commit -m (date)'
 alias gp='git push -u origin main'
-
-# Cargo aliases
-alias cr='cargo run'
-alias ca='cargo add'
-
-# Aliases for the pass-rs program
-function pa
-    pass-rs --add $argv
-end
-alias pl='pass-rs --list'
-function pr
-    pass-rs --remove $argv
-end
-
-# Aliases for the todo-rs program
-function ta
-    todo-rs --add $argv
-end
-alias tl='todo-rs --list'
-function tr
-    todo-rs --remove $argv
-end
-
-# Personal project related aliases
-alias rurls="source $HOME/PersonalProjects/suburl_crawler_py/.venv/bin/activate && $HOME/PersonalProjects/suburl_crawler_py/sub_url_crawler.py"
 
 set -gx HISTSIZE 1000
 set -gx SAVEHIST 1000

@@ -50,7 +50,7 @@ require('lazy').setup({
     -- { import = 'plugins.neovide' },
     { import = 'plugins.autopairs' },
     { import = 'plugins.rosepine' },
-    { import = 'plugins.image' },
+    -- { import = 'plugins.image' },
     { import = 'plugins.aura' },
   }
 })

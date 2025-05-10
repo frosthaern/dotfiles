@@ -1,5 +1,5 @@
 [general]
-import = ["/home/shashank/.config/alacritty/alacritty-theme/themes/aura.toml"]
+import = ["/home/shashank/.config/alacritty/alacritty-theme/themes/carbonfox.toml"]
 
 [window]
 opacity = 1.0
@@ -9,18 +9,20 @@ decorations = "Full"
 decorations_theme_variant = "Dark"
 startup_mode = "Maximized"
 
-# [colors]
-# primary.background = "#000000"
+[colors]
+primary.background = "#000000"
 
 [font]
-normal.family = "Iosevka"
+normal.family = "JetBrainsMonoNL Nerd Font"
 normal.style = "SemiBold"
 italic.style = "Regular"
-size = 14.0
+size = 12.0
+offset.x = 0
+offset.y = 7
 
 [cursor]
 style.shape = "Underline"
 style.blinking = "Never"
-vi_mode_style.shape = "Underline"
+vi_mode_style.shape = "Block"
 vi_mode_style.blinking = "Never"
 

@@ -35,5 +35,5 @@ vim.g.codeium_disable_bindings = 1
 vim.g.codeium_disable_virtual_text = true
 vim.g.netrw_banner = 0
 vim.g.netrw_browser_split = 0
-vim.cmd('colorscheme rose-pine')
+vim.cmd('colorscheme carbonfox')
 vim.cmd("set statusline+=%{get(b:,'gitsigns_status','')}")

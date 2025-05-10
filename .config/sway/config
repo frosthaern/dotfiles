@@ -20,7 +20,7 @@ set $right l
 set $term alacritty
 set $font JetBrainsMono NFM Bold
 set $menu rofi -show drun
-output eDP-1 scale 2
+output eDP-1 scale 2.0
 
 # setting font
 font pango:$font 10
@@ -64,11 +64,13 @@ input "1739:52861:SYNA32C6:00_06CB:CE7D_Touchpad" {
         middle_emulation enabled
         accel_profile "adaptive"
         pointer_accel 0.1
+        natural_scroll enabled
 }
 
 input "1739:52861:SYNA32C6:00_06CB:CE7D_Mouse" {
         accel_profile "flat"
         pointer_accel 1.0
+        natural_scroll enabled
 }
 
 ### Key bindings
