@@ -208,6 +208,11 @@ bindsym $mod+r mode "resize"
 #
 # Status Bar:
 #
-# Read `man 5 sway-bar` for more information about this section.
+assign [app_id="Alacritty"] 1
+assign [app_id="Zed"] 2
+assign [class="Google-Chrome"] 2
+assign [app_id="zathura"] 4
 
+
+# Read `man 5 sway-bar` for more information about this section.
 include /etc/sway/config.d/*
