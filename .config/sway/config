@@ -20,7 +20,7 @@ set $right l
 set $term alacritty
 set $font JetBrainsMono NFM Bold
 set $menu rofi -show drun
-output eDP-1 scale 2.0
+output eDP-1 scale 2
 
 # setting font
 font pango:$font 10
@@ -212,6 +212,7 @@ assign [app_id="Alacritty"] 1
 assign [app_id="Zed"] 2
 assign [class="Google-Chrome"] 2
 assign [app_id="zathura"] 4
+assign [app_id="Obsidian"] 5
 
 
 # Read `man 5 sway-bar` for more information about this section.

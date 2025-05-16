@@ -12,7 +12,6 @@ end
 #     echo -n "["$user"@"$host" "$dir"]\$ "
 # end
 
-
 set -gx PS1 '[\u@\h \W]\$ '
 
 # Environment variables
@@ -56,6 +55,8 @@ alias mp3='yt-dlp -x "$1" --audio-format mp3'
 alias nv='nvim -u ~/.config/kickstart.nvim/init.lua $1'
 alias mc='java -jar /home/shashank/mc.jar'
 alias fontlist='fc-list :family | uniq | sort | rg'
+alias v='vim'
+alias gv='GTK_THEME=Adwaita:dark gvim'
 
 # Important system aliases
 alias gmute='pamixer --get-mute'
@@ -120,3 +121,7 @@ set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME ; se
 # This section can be safely removed at any time if needed.
 test -r '/home/shashank/.opam/opam-init/init.fish' && source '/home/shashank/.opam/opam-init/init.fish' > /dev/null 2> /dev/null; or true
 # END opam configuration
+
+
+# starship
+starship init fish | source

@@ -1,5 +1,5 @@
 # font
-set font "JetBrainsMonoNL Nerd Font Mono 13"
+set font "FiraCode Nerd Font Mono Bold 13"
 
 # database
 set database sqlite

@@ -38,22 +38,30 @@ export NVM_DIR="$HOME/.config/nvm"
 export WEZTERM_GUI_BACKEND="wayland"
 export WALLPAPER_DIR='/home/shashank/Pictures/Wallpapers'
 export TERM='kitty'
+export XDG_CURRENT_DESKTOP='sway'
 
-alias l='ls -al'
-alias d='fd -t d -H | fzf'
-alias f='fd -t f -H | fzf'
+# Aliases
+alias grep='grep --color=auto'
 alias convertpngtojpg='mogrify -format jpg *.png'
 alias vate='source .venv/bin/activate'
-alias mc='java -jar ~/SKlauncher-3.2.8.jar'
-alias c='code'
-alias toff='echo "1" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo'
-alias ton='echo "0" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo'
-alias tshow='cat /sys/devices/system/cpu/intel_pstate/no_turbo'
-alias vate='source .venv/bin/activate'
-alias update='sudo pacman -Syu; paru -Syu'
+alias mc='java -jar /home/shashank/mc.jar'
+alias speedtest='curl -w "\n\nTime: %{time_total}s\nDownload: %{speed_download} bytes/sec\nSize: %{size_download} bytes\n" -o /dev/null -s'
+alias aria='aria2c --enable-mmap --file-allocation=none -x 16 -s 16 -k 1M'
 alias zf='zathura ~/$(fzf)'
-alias think='nvim think.md'
 alias mp3='yt-dlp -x "$1" --audio-format mp3'
+alias nv='nvim -u ~/.config/kickstart.nvim/init.lua $1'
+alias fontlist='fc-list :family | uniq | sort | rg'
+alias v='vim'
+alias gv='GTK_THEME=Adwaita:dark gvim'
+alias gmute='pamixer --get-mute'
+alias batt='acpi -b'
+alias stat='status.sh'
+
+# Git aliases
+alias gs='git status'
+alias ga='git add .'
+alias gcd='git commit -m "$(date)"'
+alias gp='git push -u origin main'
 
 # this is hwo you do postgres
 # psql -U postgres -d student -h localhost -W
@@ -80,29 +88,9 @@ alias gc='git commit -m "$1"'
 alias gcd='git commit -m "$(date)"'
 alias gp='git push -u origin main'
 
-# Cargo aliases
-alias cr='cargo run'
-alias ca='cargo add'
-
-# Aliases for the pass-rs program
-alias pa='pass-rs --add "$1"'
-alias pl='pass-rs --list'
-alias pr='pass-rs --remove "$1"'
-
-# Aliases for the todo-rs program
-alias ta='todo-rs --add "$1"'
-alias tl='todo-rs --list'
-alias tr='todo-rs --remove "$1"'
-
-# Personal project related aliases
-alias rurls="source $HOME/PersonalProjects/suburl_crawler_py/.venv/bin/activate && $HOME/PersonalProjects/suburl_crawler_py/sub_url_crawler.py"
-
 export HISTSIZE=1000
 export SAVEHIST=1000
 export HISTFILE="$HOME/.histfile"
-
-# Evaluate zoxide initialization
-eval "$(zoxide init bash)"
 
 ff() {
     fastfetch
@@ -128,3 +116,7 @@ recv() {
 }
 
 . "$HOME/.cargo/env"
+eval "$(starship init bash)"
+
+# Evaluate zoxide initialization
+eval "$(zoxide init bash)"
