@@ -3,7 +3,7 @@ filetype on
 filetype plugin indent on
 syntax on
 set nu
-set clipboard = "unnamedplus"
+set clipboard=unnamedplus
 set rnu
 set shiftwidth=4
 set ruler

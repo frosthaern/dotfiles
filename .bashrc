@@ -38,7 +38,6 @@ export NVM_DIR="$HOME/.config/nvm"
 export WEZTERM_GUI_BACKEND="wayland"
 export WALLPAPER_DIR='/home/shashank/Pictures/Wallpapers'
 export TERM='kitty'
-export XDG_CURRENT_DESKTOP='sway'
 
 # Aliases
 alias grep='grep --color=auto'
@@ -56,6 +55,7 @@ alias gv='GTK_THEME=Adwaita:dark gvim'
 alias gmute='pamixer --get-mute'
 alias batt='acpi -b'
 alias stat='status.sh'
+alias ll='ls -al'
 
 # Git aliases
 alias gs='git status'
