@@ -7,6 +7,9 @@ exec --no-startup-id swaync
 exec --no-startup-id waybar
 exec --no-startup-id wal -R
 exec --no-startup-id pass-secret-service
+exec --no-startup-id wl-paste --type text --watch cliphist store
+exec --no-startup-id wl-paste --type image --watch cliphist store
+
 
 exec_always --no-startup-id dbus-update-activation-environment --systemd --all
 
@@ -86,8 +89,11 @@ bindsym XF86MonBrightnessDown exec brightnessctl s 2%-
 bindsym XF86MonBrightnessUp exec brightnessctl s +2%
 
 # screenshots
-bindsym $mod+Shift+p exec grim - | wl-copy
-bindsym $mod+p exec grim -g "$(slurp -d)" - | wl-copy
+bindsym $mod+Shift+p exec grim - | cliphist store
+bindsym $mod+p exec grim -g "$(slurp -d)" - | cliphist store
+
+# copy pasta cliphist
+bindsym $alt+c exec cliphist list | rofi -dmenu | cliphist decode | wl-copy
 
 # Start a terminal
 bindsym $mod+Return exec $term
