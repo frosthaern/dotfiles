@@ -7,6 +7,8 @@
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
+alias l='ls -al'
+
 PS1='[\u@\h \W]\$ '
 
 # Ranking mirrors
@@ -116,7 +118,7 @@ recv() {
 }
 
 . "$HOME/.cargo/env"
-eval "$(starship init bash)"
+# eval "$(starship init bash)"
 
 # Evaluate zoxide initialization
 eval "$(zoxide init bash)"

@@ -7,13 +7,12 @@ exec --no-startup-id swaync
 exec --no-startup-id waybar
 exec --no-startup-id wal -R
 exec --no-startup-id pass-secret-service
-exec --no-startup-id wl-paste --type text --watch cliphist store
-exec --no-startup-id wl-paste --type image --watch cliphist store
-
+exec --no-startup-id wl-paste --watch cliphist store
 
 exec_always --no-startup-id dbus-update-activation-environment --systemd --all
 
 # Logo key. Use Mod1 for Alt.
+set $font ComicShanns Nerd Font
 set $mod Mod4
 set $alt Mod1
 set $left h
@@ -21,7 +20,6 @@ set $down j
 set $up k
 set $right l
 set $term alacritty
-set $font JetBrainsMono NFM Bold
 set $menu rofi -show drun
 output eDP-1 scale 2
 
@@ -109,7 +107,7 @@ bindsym $mod+q kill
 bindsym $mod+d exec $menu
 
 floating_modifier $mod normal
-bindsym $mod+Shift+c exec "swaymsg reload"
+bindsym $mod+Shift+c exec swaymsg reload
 bindsym $mod+Shift+q exec swaymsg exit
 
 
@@ -216,7 +214,8 @@ bindsym $mod+r mode "resize"
 #
 assign [app_id="Alacritty"] 1
 assign [app_id="Zed"] 2
-assign [class="Google-Chrome"] 2
+assign [class="Google-Chrome"] 3
+assign [class="firefox"] 3
 assign [app_id="zathura"] 4
 assign [app_id="Obsidian"] 5
 

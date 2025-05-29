@@ -11,11 +11,11 @@ set encoding=utf-8
 set wrap
 set autoindent
 set smartindent
-set mouse=a
+set mouse=r
 set nowrap
 set tabstop=2 shiftwidth=2 expandtab
-set guifont=JetBrainsMonoNL\ Nerd\ Font\ 14
-colorscheme default
+set guifont=ComicShanns\ Nerd\ Font\ 12
+colorscheme unokai
 
 " netrw config
 let mapleader = " "
