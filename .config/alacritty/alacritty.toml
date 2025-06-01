@@ -12,10 +12,14 @@ startup_mode = "Maximized"
 [colors]
 primary.background = "#000000"
 
+[cursor]
+style.shape = "Beam"
+style.blinking = "Never"
+
 [font]
 normal.family = "ComicShanns Nerd Font"
 normal.style = "Regular"
 italic.style = "Regular"
-size = 12.0
+size = 10.0
 offset.x = 0
 offset.y = 3
