@@ -57,6 +57,7 @@ alias mc='java -jar /home/shashank/mc.jar'
 alias fontlist='fc-list :family | uniq | sort | rg'
 alias v='vim'
 alias gv='GTK_THEME=Adwaita:dark gvim'
+alias l='ll'
 
 # Important system aliases
 alias gmute='pamixer --get-mute'
@@ -121,7 +122,3 @@ set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME ; se
 # This section can be safely removed at any time if needed.
 test -r '/home/shashank/.opam/opam-init/init.fish' && source '/home/shashank/.opam/opam-init/init.fish' > /dev/null 2> /dev/null; or true
 # END opam configuration
-
-
-# starship
-starship init fish | source

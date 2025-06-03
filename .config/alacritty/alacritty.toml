@@ -17,7 +17,7 @@ style.shape = "Beam"
 style.blinking = "Never"
 
 [font]
-normal.family = "ComicShanns Nerd Font"
+normal.family = "JetBrainsMono Nerd Font Mono"
 normal.style = "Regular"
 italic.style = "Regular"
 size = 10.0

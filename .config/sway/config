@@ -19,7 +19,7 @@ set $left h
 set $down j
 set $up k
 set $right l
-set $term alacritty
+set $term kitty
 set $menu rofi -show drun
 output eDP-1 scale 2
 
@@ -87,8 +87,8 @@ bindsym XF86MonBrightnessDown exec brightnessctl s 2%-
 bindsym XF86MonBrightnessUp exec brightnessctl s +2%
 
 # screenshots
-bindsym $mod+Shift+p exec grim - | cliphist store
-bindsym $mod+p exec grim -g "$(slurp -d)" - | cliphist store
+bindsym $mod+Shift+p exec grim - | wl-copy && wl-paste | cliphist store
+bindsym $mod+p exec grim -g "$(slurp -d)" - | wl-copy && wl-paste | cliphist store
 
 # copy pasta cliphist
 bindsym $alt+c exec cliphist list | rofi -dmenu | cliphist decode | wl-copy
