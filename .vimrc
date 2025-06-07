@@ -14,8 +14,8 @@ set smartindent
 set mouse=r
 set nowrap
 set tabstop=2 shiftwidth=2 expandtab
-set guifont=FiraCode\ Nerd\ Font\ 10
-colorscheme lunaperche
+set guifont=JetBrainsMono\ Nerd\ Font\ 10
+colorscheme elflord
 
 " netrw config
 let mapleader = " "
