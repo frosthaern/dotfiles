@@ -57,8 +57,8 @@ alias mc='java -jar /home/shashank/mc.jar'
 alias fontlist='fc-list :family | uniq | sort | rg'
 alias v='vim'
 alias gv='GTK_THEME=Adwaita:dark gvim'
-alias l='ll'
 alias day='date +"%d_%m_%y"'
+alias ls='eza'
 
 # Important system aliases
 alias gmute='pamixer --get-mute'

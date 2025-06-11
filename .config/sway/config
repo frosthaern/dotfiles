@@ -19,7 +19,7 @@ set $left h
 set $down j
 set $up k
 set $right l
-set $term kitty
+set $term ghostty
 set $menu rofi -show drun
 output eDP-1 scale 2
 
@@ -60,7 +60,7 @@ client.urgent           $color9   $color3   $color15  $color11
 
 # run swaymsg -t get_inputs
 input "1739:52861:SYNA32C6:00_06CB:CE7D_Touchpad" {
-        dwt enabled
+#        dwt enabled
         tap enabled
         middle_emulation enabled
         accel_profile "adaptive"
