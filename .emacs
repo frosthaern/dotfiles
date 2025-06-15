@@ -31,7 +31,7 @@
 (toggle-truncate-lines t)
 (set-face-attribute 'default nil
                     :family "JetBrainsMono NFM"
-                    :height 150
+                    :height 100
                     :slant 'normal)
 
 (keymap-global-set "C-c c" 'compile)

@@ -6,8 +6,12 @@ mouse = true
 auto-pairs = true
 auto-completion = true
 auto-format = true
-idle-timeout = 400
+idle-timeout = 250
 completion-trigger-len = 2
+
+[editor.lsp]
+enable = true
+auto-signature-help = true
 
 [editor.cursor-shape]
 insert = "bar"

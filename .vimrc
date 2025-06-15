@@ -14,7 +14,7 @@ set smartindent
 set mouse=r
 set nowrap
 set tabstop=2 shiftwidth=2 expandtab
-set guifont=JetBrainsMono\ Nerd\ Font\ 12
+set guifont=JetBrainsMono\ Nerd\ Font\ 10
 colorscheme elflord
 
 " netrw config
