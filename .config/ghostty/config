@@ -1,5 +1,7 @@
-font-family = JetBrainsMono Nerd Font Mono
-font-size = 10
+font-family = JetBrainsMonoNL NFM
+font-family-bold = JetBrainsMonoNL NFM Bold
+font-family-italic = JetBrainsMonoNL NFM Italic
+font-size = 14
 theme = carbonfox
 cursor-style = block
 shell-integration = none
@@ -8,3 +10,4 @@ window-theme = dark
 confirm-close-surface = false
 window-padding-x = 20
 window-padding-y = 20
+keybind = global:ctrl+shift+a=reload_config
