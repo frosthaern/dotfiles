@@ -11,7 +11,7 @@
  '(custom-safe-themes '(default))
  '(display-line-numbers 'relative)
  '(ido-use-virtual-buffers 'auto)
- '(package-selected-packages '(all-the-icons corfu drag-stuff smex)))
+ '(package-selected-packages '(all-the-icons corfu drag-stuff magit smex)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -127,6 +127,9 @@
   :ensure t
   :hook
   ((python-mode haskell-mode c-mode rust-mode c++-mode) . eglot-ensure))
+
+(use-package magit
+  :ensure t)
 
 (provide 'init)
 ;;; .emacs ends here
