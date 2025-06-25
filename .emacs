@@ -11,7 +11,9 @@
  '(custom-safe-themes '(default))
  '(display-line-numbers 'relative)
  '(ido-use-virtual-buffers 'auto)
- '(package-selected-packages '(all-the-icons corfu drag-stuff magit smex)))
+ '(package-selected-packages
+   '(all-the-icons corfu drag-stuff eglot ido-vertical-mode magit
+		   rust-mode smex)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -108,7 +110,6 @@
   :init
   (global-corfu-mode))
 
-;; Install and configure Cape for better completion backends
 (use-package cape
   :ensure t
   :after corfu
@@ -122,7 +123,6 @@
   :ensure t
   :bind ("M-x" . smex))
 
-;; Minimal Eglot configuration for error checking only (multiple languages)
 (use-package eglot
   :ensure t
   :hook
@@ -131,5 +131,18 @@
 (use-package magit
   :ensure t)
 
+(use-package rust-mode
+  :ensure t)
+
+(use-package ido-vertical-mode
+  :ensure t
+  :after ido
+  :config
+  (ido-vertical-mode 1)
+  (setq ido-vertical-define-keys 'C-n-and-C-p-only
+        ido-vertical-show-count t
+        ido-max-window-height 0.5))
+
 (provide 'init)
 ;;; .emacs ends here
+
