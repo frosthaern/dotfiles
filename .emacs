@@ -32,8 +32,8 @@
 (column-number-mode t)
 (toggle-truncate-lines t)
 (set-face-attribute 'default nil
-                    :family "JetBrainsMono NFM"
-                    :height 100
+                    :family "Iosevka Nerd Font"
+                    :height 140
                     :slant 'normal)
 
 (keymap-global-set "C-c c" 'compile)
