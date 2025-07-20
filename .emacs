@@ -7,13 +7,16 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-enabled-themes '(modus-vivendi))
+ '(custom-enabled-themes '(modus-vivendi-tritanopia))
  '(custom-safe-themes '(default))
- '(display-line-numbers 'relative)
+ '(display-line-numbers t)
+ '(display-line-numbers-mode-hook '(display-line-numbers-mode-set-explicitly))
+ '(global-display-line-numbers-mode t)
  '(ido-use-virtual-buffers 'auto)
+ '(line-number-mode t)
  '(package-selected-packages
-   '(all-the-icons corfu drag-stuff eglot ido-vertical-mode magit
-		   rust-mode smex)))
+   '(## all-the-icons cmake-mode corfu drag-stuff eglot ido-vertical-mode
+	magit rust-mode smex)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -32,8 +35,8 @@
 (column-number-mode t)
 (toggle-truncate-lines t)
 (set-face-attribute 'default nil
-                    :family "Iosevka Nerd Font"
-                    :height 140
+                    :family "JetBrainsMono Nerd Font"
+                    :height 110
                     :slant 'normal)
 
 (keymap-global-set "C-c c" 'compile)
@@ -43,6 +46,9 @@
 (keymap-global-set "M-k" 'windmove-up)
 (keymap-global-set "C--" 'text-scale-decrease)
 (keymap-global-set "C-+" 'text-scale-increase)
+(keymap-global-set "C-q" 'duplicate-line)
+(keymap-global-set "C-%" 'make-empty-file)
+
 (add-hook 'org-mode-hook
           (lambda ()
             (local-set-key (kbd "C-S-k") 'org-metaup)
@@ -126,7 +132,7 @@
 (use-package eglot
   :ensure t
   :hook
-  ((python-mode haskell-mode c-mode rust-mode c++-mode) . eglot-ensure))
+  ((python-mode haskell-mode c-mode rust-mode c++-mode cmake-mode) . eglot-ensure))
 
 (use-package magit
   :ensure t)
@@ -146,3 +152,4 @@
 (provide 'init)
 ;;; .emacs ends here
 
+(put 'upcase-region 'disabled nil)

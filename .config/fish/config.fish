@@ -15,7 +15,7 @@ end
 set -gx PS1 '[\u@\h \W]\$ '
 
 # Environment variables
-set -gx EDITOR "nvim"
+set -gx EDITOR "gvim"
 set -gx XDG_CONFIG_HOME "$HOME/.config"
 set -gx BUN_INSTALL "$HOME/.bun"
 set -gx JAVA_HOME "/usr/lib/jvm/default"
@@ -58,6 +58,7 @@ alias fontlist='fc-list :family | uniq | sort | rg'
 alias v='vim'
 alias gv='GTK_THEME=Adwaita:dark gvim'
 alias day='date +"%d_%m_%y"'
+alias reflect="sudo reflector --country 'India' --latest 5 --age 2 --fastest 5 --protocol https --sort rate --save /etc/pacman.d/mirrorlist"
 
 # Important system aliases
 alias gmute='pamixer --get-mute'
