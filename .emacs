@@ -48,6 +48,9 @@
 (keymap-global-set "C-+" 'text-scale-increase)
 (keymap-global-set "C-q" 'duplicate-line)
 (keymap-global-set "C-%" 'make-empty-file)
+(keymap-global-set "M-<f1>" 'delete-other-windows)
+(keymap-global-set "M-<f2>" 'split-window-right)
+(keymap-global-set "M-<f3>" 'split-window-below)
 
 (add-hook 'org-mode-hook
           (lambda ()
