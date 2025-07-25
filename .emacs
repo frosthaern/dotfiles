@@ -51,6 +51,8 @@
 (keymap-global-set "M-<f1>" 'delete-other-windows)
 (keymap-global-set "M-<f2>" 'split-window-right)
 (keymap-global-set "M-<f3>" 'split-window-below)
+(keymap-global-set "M-<f4>" 'find-file)
+(keymap-global-set "M-<f5>" 'dired)
 
 (add-hook 'org-mode-hook
           (lambda ()
