@@ -45,7 +45,7 @@ set fish_vi_force_cursor 1
 set fish_cursor_insert "block"
 
 # Aliases
-alias l='lsd -al'
+alias l='ls -al'
 alias grep='grep --color=auto'
 alias convertpngtojpg='mogrify -format jpg *.png'
 alias vate='source .venv/bin/activate.fish'

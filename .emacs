@@ -15,8 +15,9 @@
  '(ido-use-virtual-buffers 'auto)
  '(line-number-mode t)
  '(package-selected-packages
-   '(cape cmake-mode corfu drag-stuff eglot ido-vertical-mode magit
-	  multiple-cursors rust-mode smex yaml-mode)))
+   '(cape cmake-mode corfu drag-stuff eglot go-mode hl-todo
+	  ido-vertical-mode magit multiple-cursors ruff-format
+	  rust-mode smex yaml-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -35,8 +36,8 @@
 (column-number-mode t)
 (toggle-truncate-lines t)
 (set-face-attribute 'default nil
-                    :family "JetBrainsMono Nerd Font Mono"
-                    :height 110
+                    :family "JetBrainsMono Nerd Font"
+                    :height 125
                     :slant 'normal)
 
 (keymap-global-set "C-c c" 'compile)
@@ -49,10 +50,11 @@
 (keymap-global-set "C-q" 'duplicate-line)
 (keymap-global-set "C-%" 'make-empty-file)
 (keymap-global-set "M-<f1>" 'delete-other-windows)
-(keymap-global-set "M-<f2>" 'split-window-right)
-(keymap-global-set "M-<f3>" 'split-window-below)
+(keymap-global-set "M-<f2>" 'split-window-below)
+(keymap-global-set "M-<f3>" 'split-window-right)
 (keymap-global-set "M-<f4>" 'find-file)
-(keymap-global-set "M-<f5>" 'dired)
+(keymap-global-set "M-<f6>" 'dired)
+
 
 (add-hook 'org-mode-hook
           (lambda ()
@@ -134,12 +136,20 @@
 (use-package eglot
   :ensure t
   :hook
-  ((python-mode haskell-mode c-mode rust-mode c++-mode cmake-mode) . eglot-ensure))
+  ((python-mode haskell-mode c-mode rust-mode c++-mode cmake-mode go-mode yaml-mode) . eglot-ensure))
+
+(use-package ruff-format
+  :ensure t
+  :hook
+  (python-mode . ruff-format-minor-mode))
 
 (use-package magit
   :ensure t)
 
 (use-package rust-mode
+  :ensure t)
+
+(use-package go-mode
   :ensure t)
 
 (use-package ido-vertical-mode
@@ -160,6 +170,25 @@
 (keymap-global-set "C-,"  'mc/skip-to-previous-like-this)
 (keymap-global-set "C-{"  'mc/mark-previous-lines)
 (keymap-global-set "C-}"  'mc/mark-next-lines)
+
+(use-package hl-todo
+  :ensure t
+  :config
+  ;; Enable hl-todo globally
+  (global-hl-todo-mode 1)
+
+  ;; Customize keywords and colors
+  (setq hl-todo-keyword-faces
+        '(("TODO" . "#FF0000")
+          ("FIXME" . "#FF0000")
+          ("DEBUG" . "#A020F0")
+          ("GOTCHA" . "#FF4500")
+          ("STUB" . "#1E90FF")))
+  (keymap-set hl-todo-mode-map "C-c n" #'hl-todo-next)
+  (keymap-set hl-todo-mode-map "C-c p" #'hl-todo-previous)
+  (keymap-set hl-todo-mode-map "C-c o" #'hl-todo-occur)
+  (keymap-set hl-todo-mode-map "C-c i" #'hl-todo-insert))
+
 
 (provide 'init)
 ;;; .emacs ends here
