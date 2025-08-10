@@ -1,0 +1,15 @@
+# themes and looks
+font-family = "JetBrainsMono NFM SemiBold"
+
+# keybindings
+keybind = alt+t=new_tab
+keybind = alt+n=next_tab
+keybind = alt+p=previous_tab
+keybind = alt+w=close_tab
+
+# misc
+shell-integration = fish
+
+
+
+
