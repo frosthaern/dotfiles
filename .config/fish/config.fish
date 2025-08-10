@@ -15,7 +15,7 @@ end
 set -gx PS1 '[\u@\h \W]\$ '
 
 # Environment variables
-set -gx EDITOR "gvim"
+set -gx EDITOR "vim"
 set -gx XDG_CONFIG_HOME "$HOME/.config"
 set -gx BUN_INSTALL "$HOME/.bun"
 set -gx JAVA_HOME "/usr/lib/jvm/default"
