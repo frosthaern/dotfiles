@@ -15,7 +15,7 @@ set mouse=r
 set nowrap
 set tabstop=2 shiftwidth=2 expandtab
 set guifont=JetBrainsMono\ Nerd\ Font\ 22
-colorscheme elflord
+colorscheme nord
 
 " netrw config
 let mapleader = " "
@@ -28,5 +28,19 @@ augroup NetrwNumberFix
   autocmd FileType netrw setlocal number relativenumber
 augroup END
 
-" quality of life improvements
+" quality of life keybindings
 nnoremap <leader>yf GVggy+
+nnoremap <leader>tn :tabnew<CR>
+nnoremap <leader>tc :tabclose<CR>
+nnoremap <C-n> :tabnext<CR>
+nnoremap <C-p> :tabprevious<CR>
+nnoremap <leader>tL :-tabmove<CR>
+nnoremap <leader>tH :+tabmove<CR>
+tnoremap <esc> <C-w>N
+nnoremap <C-j> <C-w><C-j>
+nnoremap <C-k> <C-w><C-k>
+nnoremap <C-h> <C-w><C-h>
+nnoremap <C-l> <C-w><C-l>
+noremap <leader>sp :split<CR>
+noremap <leader>vsp :vsplit<CR>
+noremap <leader>sc :close<CR>

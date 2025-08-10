@@ -1,0 +1,6 @@
+# keybindings
+keybind = alt+t=new_tab
+keybind = alt+l=next_tab
+keybind = alt+h=previous_tab
+keybind = alt+w=close_tab
+

@@ -1,5 +1,5 @@
 [general]
-import = ["/home/shashank/.config/alacritty-theme/themes/carbonfox.toml"]
+import = ["/home/shashank/.config/alacritty-theme/themes/nord.toml"]
 
 [window]
 opacity = 1.0
@@ -9,16 +9,12 @@ decorations = "Full"
 decorations_theme_variant = "Dark"
 startup_mode = "Maximized"
 
-[colors]
-primary.background = "#000000"
-
-
 [cursor]
 style.shape = "Block"
 style.blinking = "Never"
 
 [font]
 normal.family = "JetBrainsMono Nerd Font"
-size = 13.0
+size = 24.0
 offset.x = 0
 offset.y = 1

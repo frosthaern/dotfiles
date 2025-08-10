@@ -1,15 +1,13 @@
 # themes and looks
 font-family = "JetBrainsMono NFM SemiBold"
+font-size = 12
 
 # keybindings
-keybind = alt+t=new_tab
-keybind = alt+n=next_tab
-keybind = alt+p=previous_tab
-keybind = alt+w=close_tab
+config-file = keybinding/config
 
 # misc
 shell-integration = fish
 
-
-
-
+# looks
+window-padding-x = 10
+window-padding-y = 10
