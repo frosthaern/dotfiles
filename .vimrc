@@ -1,3 +1,15 @@
+" required plugins are nord.vim and copilot.vim
+" just put them in colors/ and pack/ respectively
+" for github the url is just there
+"
+" this is for gui
+set guifont=Iosevka\ fixed\ 10
+set guioptions=i
+set guioptions-=m
+set guioptions-=T
+set guioptions-=r
+
+" this is for both gui and tui
 set nocompatible
 filetype on
 filetype plugin indent on
@@ -14,8 +26,30 @@ set smartindent
 set mouse=r
 set nowrap
 set tabstop=2 shiftwidth=2 expandtab
-set guifont=JetBrainsMono\ Nerd\ Font\ 22
+set noswapfile
+set scrolloff=10
+set hidden
+set backspace=indent,eol,start
+set ignorecase
+set smartcase
+set incsearch
+set hlsearch
+set updatetime=300
+set signcolumn=yes
+set undofile
+set termguicolors
+set cursorline
+set colorcolumn=100
+set showmode
+set completeopt=menu,menuone,noselect
+set foldmethod=syntax
+set ttyfast
 colorscheme nord
+
+call plug#begin()
+Plug 'shaunsingh/nord.nvim'
+Plug 'github/copilot.vim'
+call plug#end()
 
 " netrw config
 let mapleader = " "
@@ -36,11 +70,12 @@ nnoremap <C-n> :tabnext<CR>
 nnoremap <C-p> :tabprevious<CR>
 nnoremap <leader>tL :-tabmove<CR>
 nnoremap <leader>tH :+tabmove<CR>
-tnoremap <esc> <C-w>N
+tnoremap <leader><Esc> <C-\><C-n>
+nnoremap <leader>te :terminal<CR>
 nnoremap <C-j> <C-w><C-j>
 nnoremap <C-k> <C-w><C-k>
 nnoremap <C-h> <C-w><C-h>
 nnoremap <C-l> <C-w><C-l>
 noremap <leader>sp :split<CR>
 noremap <leader>vsp :vsplit<CR>
-noremap <leader>sc :close<CR>
+noremap <leader>sc :close!<CR>

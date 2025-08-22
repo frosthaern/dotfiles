@@ -1,6 +1,12 @@
 # keybindings
 keybind = alt+t=new_tab
-keybind = alt+l=next_tab
-keybind = alt+h=previous_tab
+keybind = alt+n=next_tab
+keybind = alt+p=previous_tab
 keybind = alt+w=close_tab
-
+keybind = alt+shift+\=new_split:right
+keybind = alt+shift+-=new_split:down
+keybind = alt+h=goto_split:left
+keybind = alt+j=goto_split:down
+keybind = alt+k=goto_split:up
+keybind = alt+l=goto_split:right
+keybind = alt+c=close_surface

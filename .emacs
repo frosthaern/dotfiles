@@ -36,7 +36,7 @@
 (column-number-mode t)
 (toggle-truncate-lines t)
 (set-face-attribute 'default nil
-                    :family "Iosevka Nerd Font"
+                    :family "Iosevka Fixed"
                     :height 125
                     :slant 'normal)
 

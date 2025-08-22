@@ -1,13 +1,15 @@
 # themes and looks
-font-family = "JetBrainsMono NFM SemiBold"
+font-family = "Iosevka Fixed Semibold"
 font-size = 12
 
 # keybindings
 config-file = keybinding/config
 
 # misc
-shell-integration = fish
+shell-integration = none
+cursor-style = block
 
 # looks
 window-padding-x = 10
 window-padding-y = 10
+window-decoration = none
