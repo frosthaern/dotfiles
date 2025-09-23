@@ -7,7 +7,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-enabled-themes '(deeper-blue))
+ '(custom-enabled-themes '(modus-operandi-deuteranopia))
  '(custom-safe-themes '(default))
  '(display-line-numbers t)
  '(display-line-numbers-mode-hook '(display-line-numbers-mode-set-explicitly))
@@ -41,10 +41,10 @@
                     :slant 'normal)
 
 (keymap-global-set "C-c c" 'compile)
-(keymap-global-set "M-<down>" 'windmove-down)
-(keymap-global-set "M-<right>" 'windmove-right)
-(keymap-global-set "M-<left>" 'windmove-left)
-(keymap-global-set "M-<up>" 'windmove-up)
+(keymap-global-set "M-j" 'windmove-down)
+(keymap-global-set "M-l" 'windmove-right)
+(keymap-global-set "M-h" 'windmove-left)
+(keymap-global-set "M-k" 'windmove-up)
 (keymap-global-set "C--" 'text-scale-decrease)
 (keymap-global-set "C-+" 'text-scale-increase)
 (keymap-global-set "C-q" 'duplicate-line)
@@ -113,7 +113,7 @@
 (use-package corfu
   :ensure t
   :custom
-  (corfu-auto nil)                    ; Enable auto completion popup
+  (corfu-auto nil)                  ; Enable auto completion popup
   (corfu-auto-delay 0.2)            ; Set delay before popup shows
   (corfu-auto-prefix 2)             ; Minimum prefix length
   :init
