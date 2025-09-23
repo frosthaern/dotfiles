@@ -1,6 +1,7 @@
 # themes and looks
 font-family = "Iosevka Fixed Semibold"
 font-size = 12
+theme = Gruvbox Light
 
 # keybindings
 config-file = keybinding/config

@@ -7,15 +7,22 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-enabled-themes '(modus-operandi-deuteranopia))
- '(custom-safe-themes '(default))
+ '(custom-enabled-themes '(gruvbox-light-soft))
+ '(custom-safe-themes
+   '("d5fd482fcb0fe42e849caba275a01d4925e422963d1cd165565b31d3f4189c87"
+     "18a1d83b4e16993189749494d75e6adb0e15452c80c431aca4a867bcc8890ca9"
+     "5aedf993c7220cbbe66a410334239521d8ba91e1815f6ebde59cecc2355d7757"
+     "75b371fce3c9e6b1482ba10c883e2fb813f2cc1c88be0b8a1099773eb78a7176"
+     "5a0ddbd75929d24f5ef34944d78789c6c3421aa943c15218bac791c199fc897d"
+     "8363207a952efb78e917230f5a4d3326b2916c63237c1f61d7e5fe07def8d378"
+     default))
  '(display-line-numbers t)
  '(display-line-numbers-mode-hook '(display-line-numbers-mode-set-explicitly))
  '(global-display-line-numbers-mode t)
  '(ido-use-virtual-buffers 'auto)
  '(line-number-mode t)
  '(package-selected-packages
-   '(cape cmake-mode corfu drag-stuff eglot go-mode hl-todo
+   '(cape cmake-mode corfu drag-stuff eglot go-mode gruvbox-theme hl-todo
 	  ido-vertical-mode magit multiple-cursors ruff-format
 	  rust-mode smex yaml-mode)))
 (custom-set-faces
@@ -39,6 +46,7 @@
                     :family "Iosevka Fixed"
                     :height 125
                     :slant 'normal)
+
 
 (keymap-global-set "C-c c" 'compile)
 (keymap-global-set "M-j" 'windmove-down)
