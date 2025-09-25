@@ -7,7 +7,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-enabled-themes '(gruvbox-light-soft))
+ '(custom-enabled-themes '(gruvbox-dark-hard))
  '(custom-safe-themes
    '("d5fd482fcb0fe42e849caba275a01d4925e422963d1cd165565b31d3f4189c87"
      "18a1d83b4e16993189749494d75e6adb0e15452c80c431aca4a867bcc8890ca9"
@@ -23,8 +23,7 @@
  '(line-number-mode t)
  '(package-selected-packages
    '(cape cmake-mode corfu drag-stuff eglot go-mode gruvbox-theme hl-todo
-	  ido-vertical-mode magit multiple-cursors ruff-format
-	  rust-mode smex yaml-mode)))
+	  magit multiple-cursors rust-mode undo-tree yaml-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -42,10 +41,11 @@
 (global-font-lock-mode 1)
 (column-number-mode t)
 (toggle-truncate-lines t)
-(set-face-attribute 'default nil
-                    :family "Iosevka Fixed"
-                    :height 125
-                    :slant 'normal)
+(flymake-mode -1)
+(set-face-attribute 'default nil :family "Iosevka Fixed" :height 125 :slant 'normal)
+(electric-pair-mode t)
+
+(setq undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo")))
 
 
 (keymap-global-set "C-c c" 'compile)
@@ -62,6 +62,17 @@
 (keymap-global-set "M-<f3>" 'split-window-right)
 (keymap-global-set "M-<f4>" 'find-file)
 (keymap-global-set "M-<f6>" 'dired)
+(keymap-global-set "C-x C-a" 'copy-buffer)
+
+
+;; Make sure to cursor-shit package is installed
+(keymap-global-set "C->"  'mc/mark-next-like-this)
+(keymap-global-set "C-."  'mc/skip-to-next-like-this)
+(keymap-global-set "C-<"  'mc/mark-previous-like-this)
+(keymap-global-set "C-,"  'mc/skip-to-previous-like-this)
+(keymap-global-set "C-{"  'mc/mark-previous-lines)
+(keymap-global-set "C-}"  'mc/mark-next-lines)
+
 
 
 (add-hook 'org-mode-hook
@@ -92,6 +103,12 @@
 (require 'use-package)
 (setq use-package-always-ensure t)
 
+(use-package undo-tree
+  :ensure t
+  :config
+  (global-undo-tree-mode)
+  (setq undo-tree-auto-save-history t))
+
 (use-package ido
   :demand t
   :init
@@ -100,16 +117,6 @@
   :config
   (ido-mode t)
   (ido-everywhere t))
-
-(add-hook 'prog-mode-hook 'flymake-mode)
-
-(use-package flymake
-  :demand t
-  :hook (prog-mode . flymake-mode)
-  :init
-  (setq flymake-no-changes-timeout 0.3
-	flymake-start-on-save-buffer t
-	flymake-start-on-flymake-mode t))
 
 (use-package drag-stuff
   :ensure t
@@ -137,19 +144,13 @@
   (add-to-list 'completion-at-point-functions #'cape-dabbrev)
   (add-to-list 'completion-at-point-functions #'cape-keyword))
 
-(use-package smex
-  :ensure t
-  :bind ("M-x" . smex))
-
 (use-package eglot
   :ensure t
   :hook
   ((python-mode haskell-mode c-mode rust-mode c++-mode cmake-mode go-mode yaml-mode) . eglot-ensure))
-
-(use-package ruff-format
-  :ensure t
-  :hook
-  (python-mode . ruff-format-minor-mode))
+(add-to-list 'eglot-stay-out-of 'flymake)
+(with-eval-after-load "eglot"
+  (add-to-list 'eglot-stay-out-of 'flymake))
 
 (use-package magit
   :ensure t)
@@ -160,24 +161,8 @@
 (use-package go-mode
   :ensure t)
 
-(use-package ido-vertical-mode
-  :ensure t
-  :after ido
-  :config
-  (ido-vertical-mode 1)
-  (setq ido-vertical-define-keys 'C-n-and-C-p-only
-        ido-vertical-show-count t
-        ido-max-window-height 0.5))
-
 (use-package multiple-cursors
-  :ensure t
-  )
-(keymap-global-set "C->"  'mc/mark-next-like-this)
-(keymap-global-set "C-."  'mc/skip-to-next-like-this)
-(keymap-global-set "C-<"  'mc/mark-previous-like-this)
-(keymap-global-set "C-,"  'mc/skip-to-previous-like-this)
-(keymap-global-set "C-{"  'mc/mark-previous-lines)
-(keymap-global-set "C-}"  'mc/mark-next-lines)
+  :ensure t)
 
 (use-package hl-todo
   :ensure t
@@ -197,6 +182,11 @@
   (keymap-set hl-todo-mode-map "C-c o" #'hl-todo-occur)
   (keymap-set hl-todo-mode-map "C-c i" #'hl-todo-insert))
 
+
+;; personal functions
+(defun copy-buffer ()
+  (interactive)
+  (save-excursion (kill-ring-save (point-min) (point-max))))
 
 (provide 'init)
 ;;; .emacs ends here

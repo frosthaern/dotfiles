@@ -44,12 +44,14 @@ set showmode
 set completeopt=menu,menuone,noselect
 set foldmethod=syntax
 set ttyfast
-colorscheme nord
 
 call plug#begin()
 Plug 'shaunsingh/nord.nvim'
 Plug 'github/copilot.vim'
+Plug 'morhetz/gruvbox'
 call plug#end()
+
+colorscheme gruvbox
 
 " netrw config
 let mapleader = " "
