@@ -49,9 +49,10 @@ call plug#begin()
 Plug 'shaunsingh/nord.nvim'
 Plug 'github/copilot.vim'
 Plug 'morhetz/gruvbox'
+Plug 'm6vrm/gruber.vim'
 call plug#end()
 
-colorscheme gruvbox
+colorscheme gruber
 
 " netrw config
 let mapleader = " "

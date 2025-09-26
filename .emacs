@@ -7,9 +7,11 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-enabled-themes '(gruvbox-dark-hard))
+ '(custom-enabled-themes '(gruber-darker))
  '(custom-safe-themes
-   '("d5fd482fcb0fe42e849caba275a01d4925e422963d1cd165565b31d3f4189c87"
+   '("01a9797244146bbae39b18ef37e6f2ca5bebded90d9fe3a2f342a9e863aaa4fd"
+     "51fa6edfd6c8a4defc2681e4c438caf24908854c12ea12a1fbfd4d055a9647a3"
+     "d5fd482fcb0fe42e849caba275a01d4925e422963d1cd165565b31d3f4189c87"
      "18a1d83b4e16993189749494d75e6adb0e15452c80c431aca4a867bcc8890ca9"
      "5aedf993c7220cbbe66a410334239521d8ba91e1815f6ebde59cecc2355d7757"
      "75b371fce3c9e6b1482ba10c883e2fb813f2cc1c88be0b8a1099773eb78a7176"
@@ -29,7 +31,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(flymake-error ((t nil)))
+ '(flymake-note ((t nil)))
+ '(flymake-warning ((t nil))))
 
 (tool-bar-mode -1)
 (server-start)
@@ -41,8 +45,7 @@
 (global-font-lock-mode 1)
 (column-number-mode t)
 (toggle-truncate-lines t)
-(flymake-mode -1)
-(set-face-attribute 'default nil :family "JetBrainsMono NFM" :height 130 :slant 'normal)
+(set-face-attribute 'default nil :family "JetBrainsMono NFM" :height 110 :slant 'normal)
 (electric-pair-mode t)
 
 (setq undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo")))
@@ -148,9 +151,6 @@
   :ensure t
   :hook
   ((python-mode haskell-mode c-mode rust-mode c++-mode cmake-mode go-mode yaml-mode) . eglot-ensure))
-(add-to-list 'eglot-stay-out-of 'flymake)
-(with-eval-after-load "eglot"
-  (add-to-list 'eglot-stay-out-of 'flymake))
 
 (use-package magit
   :ensure t)
