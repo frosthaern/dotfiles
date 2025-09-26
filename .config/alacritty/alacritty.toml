@@ -1,5 +1,5 @@
 [general]
-import = ["/home/shashank/.config/alacritty-theme/themes/nord.toml"]
+import = ["/home/shashank/.config/alacritty-theme/themes/gruber_darker.toml"]
 
 [window]
 opacity = 1.0
@@ -14,7 +14,7 @@ style.shape = "Block"
 style.blinking = "Never"
 
 [font]
-normal.family = "JetBrainsMono Nerd Font"
-size = 24.0
+normal.family = "JetBrainsMono NFM"
+size = 10.0
 offset.x = 0
 offset.y = 1

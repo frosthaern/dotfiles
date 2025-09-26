@@ -42,7 +42,7 @@
 (column-number-mode t)
 (toggle-truncate-lines t)
 (flymake-mode -1)
-(set-face-attribute 'default nil :family "Iosevka Fixed" :height 125 :slant 'normal)
+(set-face-attribute 'default nil :family "JetBrainsMono NFM" :height 130 :slant 'normal)
 (electric-pair-mode t)
 
 (setq undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo")))
