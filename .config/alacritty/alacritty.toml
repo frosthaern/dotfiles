@@ -10,11 +10,11 @@ decorations_theme_variant = "Dark"
 startup_mode = "Maximized"
 
 [cursor]
-style.shape = "Block"
+style.shape = "Beam"
 style.blinking = "Never"
 
 [font]
 normal.family = "JetBrainsMono NFM"
-size = 10.0
+size = 20.0
 offset.x = 0
 offset.y = 1
