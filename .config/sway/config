@@ -20,7 +20,7 @@ set $up k
 set $right l
 set $term alacritty
 set $menu rofi -show drun
-output eDP-1 scale 2
+output eDP-1 scale 1
 
 # setting font
 font pango:$font 10
@@ -82,8 +82,8 @@ input "1739:52861:SYNA32C6:00_06CB:CE7D_Mouse" {
 bindsym XF86AudioRaiseVolume exec pamixer -i 5
 bindsym XF86AudioLowerVolume exec pamixer -d 5
 bindsym XF86AudioMute exec pamixer -t
-bindsym XF86MonBrightnessDown exec brightnessctl s 2%-
-bindsym XF86MonBrightnessUp exec brightnessctl s +2%
+bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
+bindsym XF86MonBrightnessUp exec brightnessctl s +10%
 
 # screenshots
 bindsym $mod+Shift+p exec grim - | wl-copy && wl-paste | cliphist store
