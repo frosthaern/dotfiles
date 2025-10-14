@@ -1,7 +1,7 @@
 # themes and looks
 font-family = "Iosevka Fixed Semibold"
-font-size = 12
-theme = Gruvbox Light
+font-size = 20
+theme = Gruber Darker
 
 # keybindings
 config-file = keybinding/config
@@ -13,4 +13,3 @@ cursor-style = block
 # looks
 window-padding-x = 10
 window-padding-y = 10
-window-decoration = none

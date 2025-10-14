@@ -24,8 +24,9 @@
  '(ido-use-virtual-buffers 'auto)
  '(line-number-mode t)
  '(package-selected-packages
-   '(cape cmake-mode corfu drag-stuff eglot go-mode gruvbox-theme hl-todo
-	  magit multiple-cursors rust-mode undo-tree yaml-mode)))
+   '(cape cider clojure-mode cmake-mode corfu drag-stuff eglot go-mode
+	  gruvbox-theme hl-todo magit multiple-cursors rust-mode
+	  undo-tree yaml-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -45,7 +46,7 @@
 (global-font-lock-mode 1)
 (column-number-mode t)
 (toggle-truncate-lines t)
-(set-face-attribute 'default nil :family "JetBrainsMono NFM" :height 110 :slant 'normal)
+(set-face-attribute 'default nil :family "JetBrainsMono NFM" :height 200 :slant 'normal)
 (electric-pair-mode t)
 
 (setq undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo")))
@@ -150,7 +151,9 @@
 (use-package eglot
   :ensure t
   :hook
-  ((python-mode haskell-mode c-mode rust-mode c++-mode cmake-mode go-mode yaml-mode) . eglot-ensure))
+  ((python-mode haskell-mode c-mode rust-mode c++-mode cmake-mode go-mode yaml-mode) . eglot-ensure)
+  :config
+  (setq eglot-inlay-hints-mode nil))
 
 (use-package magit
   :ensure t)
@@ -159,6 +162,12 @@
   :ensure t)
 
 (use-package go-mode
+  :ensure t)
+
+(use-package clojure-mode
+  :ensure t)
+
+(use-package cider
   :ensure t)
 
 (use-package multiple-cursors

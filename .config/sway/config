@@ -26,7 +26,7 @@ output eDP-1 scale 1
 font pango:$font 10
 
 # default settings
-default_border pixel 2
+default_border pixel 5
 smart_borders on
 
 
