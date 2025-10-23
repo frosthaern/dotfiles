@@ -46,7 +46,7 @@
 (global-font-lock-mode 1)
 (column-number-mode t)
 (toggle-truncate-lines t)
-(set-face-attribute 'default nil :family "JetBrainsMono NFM" :height 200 :slant 'normal)
+(set-face-attribute 'default nil :family "Iosevka Fixed SemiBold" :height 200 :slant 'normal)
 (electric-pair-mode t)
 
 (setq undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo")))
