@@ -4,8 +4,8 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
 # enable tapping and enable natural scrolling
-exec_always --no-startup-id xinput set-prop "SYNA32C6:00 06CB:CE7D Touchpad" "libinput Tapping Enabled" 1
-exec_always --no-startup-id xinput set-prop "SYNA32C6:00 06CB:CE7D Touchpad" "libinput Natural Scrolling Enabled" 1
+exec --no-startup-id xinput set-prop "SYNA32C6:00 06CB:CE7D Touchpad" "libinput Tapping Enabled" 1
+exec --no-startup-id xinput set-prop "SYNA32C6:00 06CB:CE7D Touchpad" "libinput Natural Scrolling Enabled" 1
 
 exec_always --no-startup-id xrdb -merge ~/.cache/wal/colors.Xresources
 exec_always --no-startup-id wal -R
@@ -49,8 +49,8 @@ bindsym XF86MonBrightnessDown exec --no-startup-id  brightnessctl s 10%- && $ref
 bindsym XF86MonBrightnessUp exec --no-startup-id  brightnessctl s +10% && $refresh_i3status
 
 # have keybinds for screenshots here
-bindsym $super+Print exec --no-startup-id maim "/home/shashank/Pictures/Screenshots/Screenshot From $(date +%Y-%m-%d\ %H-%M-%S).png"
-bindsym Print exec --no-startup-id maim -g $(slop) | xclip -selection clipboard -t image/png
+bindsym $super+p exec --no-startup-id maim | xclip -selection clipboard -t image/png
+# bindsym  exec --no-startup-id maim -g $(slop) | xclip -selection clipboard -t image/png
 
 set $up k
 set $down j

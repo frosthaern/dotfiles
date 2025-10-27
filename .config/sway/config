@@ -23,7 +23,7 @@ set $menu rofi -show drun
 output eDP-1 scale 1
 
 # setting font
-font pango:$font 10
+font pango:$font 16
 
 # default settings
 default_border pixel 5

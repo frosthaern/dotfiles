@@ -15,6 +15,6 @@ style.blinking = "Never"
 
 [font]
 normal.family = "JetBrainsMono NFM"
-size = 7.0
+size = 20.0
 offset.x = 0
 offset.y = 1
