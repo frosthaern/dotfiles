@@ -170,6 +170,10 @@
 (use-package cider
   :ensure t)
 
+(use-package haskell-mode
+  :ensure t
+  :hook (haskell-mode . eglot-ensure))
+
 (use-package multiple-cursors
   :ensure t)
 

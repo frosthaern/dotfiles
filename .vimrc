@@ -52,7 +52,7 @@ Plug 'morhetz/gruvbox'
 Plug 'm6vrm/gruber.vim'
 call plug#end()
 
-colorscheme gruber
+colorscheme habamax
 
 " netrw config
 let mapleader = " "

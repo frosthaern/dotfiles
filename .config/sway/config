@@ -11,7 +11,7 @@ exec --no-startup-id wl-paste --watch cliphist store
 exec_always --no-startup-id dbus-update-activation-environment --systemd --all
 
 # Logo key. Use Mod1 for Alt.
-set $font ComicShanns Nerd Font
+set $font JetBrainsMono NFM
 set $mod Mod4
 set $alt Mod1
 set $left h
@@ -23,7 +23,7 @@ set $menu rofi -show drun
 output eDP-1 scale 1
 
 # setting font
-font pango:$font 16
+font pango:$font 15
 
 # default settings
 default_border pixel 5
@@ -60,7 +60,6 @@ client.urgent           $color9   $color3   $color15  $color11
 # run swaymsg -t get_inputs
 input "1739:52861:SYNA32C6:00_06CB:CE7D_Touchpad" {
 #        dwt enabled
-        tap enabled
         middle_emulation enabled
         accel_profile "adaptive"
         pointer_accel 0.1
