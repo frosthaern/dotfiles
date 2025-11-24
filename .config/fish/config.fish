@@ -1,4 +1,3 @@
-# ~/.config/fish/config.fish
 # shashanks fish config file
 
 function fish_greeting
@@ -24,7 +23,13 @@ set -gx WALLPAPER_DIR "$HOME/Pictures/Wallpapers"
 set -gx XDG_CURRENT_DESKTOP gnome
 # set -gx WAYLAND_DISPLAY wayland-1
 # set -gx SWAYSOCK /run/user/1000/sway-ipc.1000.1133.sock
-set -gx JAVA_HOME "/usr/lib/jvm/java-24-openjdk"
+set -gx JAVA_HOME "/usr/lib/jvm/java-25-openjdk"
+set -gx XCURSOR_THEME "Crosshair Cursors"
+set -gx XCURSOR_SIZE "36"
+
+# find "$BACKUP_DIR" -type f -name "*.zip" -mtime +7 -delete
+# this is to delete everything except the last lines
+# test this and then add it to backup_world.sh
 
 # Personal projects and paths
 set -gx PATH "$HOME/.cargo/bin" $PATH
@@ -40,6 +45,7 @@ set -gx PATH "$HOME/Codey/pass-rs/target/release" $PATH
 set -gx PATH "$HOME/Code/suburl_crawler_py" $PATH
 set -gx PATH "$JAVA_HOME/bin" $PATH
 set -gx PATH "$HOME/Apps" $PATH
+set -gx PATH "$HOME/.pyenv/bin" $PATH
 
 set fish_vi_force_cursor 1
 set fish_cursor_insert "block"
@@ -61,6 +67,8 @@ alias v='vim'
 alias gv='GTK_THEME=Adwaita:dark gvim'
 alias day='date +"%d_%m_%y"'
 alias reflect="sudo reflector --country 'India' --latest 5 --age 2 --fastest 5 --protocol https --sort rate --save /etc/pacman.d/mirrorlist"
+alias poff="systemctl poweroff --now"
+alias dc="docker compose"
 
 # Important system aliases
 alias gmute='pamixer --get-mute'
@@ -125,3 +133,5 @@ set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME ; se
 # This section can be safely removed at any time if needed.
 test -r '/home/shashank/.opam/opam-init/init.fish' && source '/home/shashank/.opam/opam-init/init.fish' > /dev/null 2> /dev/null; or true
 # END opam configuration
+
+status is-interactive; and source (pyenv init -|psub)

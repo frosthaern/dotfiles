@@ -1,4 +1,4 @@
-# for colorscheme
+# for colorschem
 include ~/.cache/wal/colors-sway
 
 # startup things
@@ -20,10 +20,11 @@ set $up k
 set $right l
 set $term alacritty
 set $menu rofi -show drun
-output eDP-1 scale 1
+set $theme white-crosshair-cursor
+output eDP-1 scale 2
 
 # setting font
-font pango:$font 15
+font pango:$font 10
 
 # default settings
 default_border pixel 5
@@ -198,6 +199,14 @@ bindsym $mod+minus scratchpad show
 #
 # Resizing containers:
 #
+
+seat seat0 xcursor_theme $theme 24
+
+exec {
+  env XCURSOR_THEME=$theme
+  env XCURSOR_SIZE=24
+}
+
 mode "resize" {
         bindsym $left resize shrink width 10px
         bindsym $down resize grow height 10px
