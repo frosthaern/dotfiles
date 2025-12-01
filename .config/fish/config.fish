@@ -21,11 +21,7 @@ set -gx JAVA_HOME "/usr/lib/jvm/default"
 set -gx NVM_DIR "$HOME/.config/nvm"
 set -gx WALLPAPER_DIR "$HOME/Pictures/Wallpapers"
 set -gx XDG_CURRENT_DESKTOP gnome
-# set -gx WAYLAND_DISPLAY wayland-1
-# set -gx SWAYSOCK /run/user/1000/sway-ipc.1000.1133.sock
 set -gx JAVA_HOME "/usr/lib/jvm/java-25-openjdk"
-set -gx XCURSOR_THEME "Crosshair Cursors"
-set -gx XCURSOR_SIZE "36"
 
 # find "$BACKUP_DIR" -type f -name "*.zip" -mtime +7 -delete
 # this is to delete everything except the last lines

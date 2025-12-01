@@ -7,6 +7,8 @@ exec --no-startup-id waybar
 exec --no-startup-id wal -R
 exec --no-startup-id pass-secret-service
 exec --no-startup-id wl-paste --watch cliphist store
+exec --no-startup-id systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+exec --no-startup-id dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 
 exec_always --no-startup-id dbus-update-activation-environment --systemd --all
 
@@ -20,7 +22,7 @@ set $up k
 set $right l
 set $term alacritty
 set $menu rofi -show drun
-set $theme white-crosshair-cursor
+set $theme default 
 output eDP-1 scale 2
 
 # setting font
@@ -61,18 +63,27 @@ client.urgent           $color9   $color3   $color15  $color11
 # run swaymsg -t get_inputs
 input "1739:52861:SYNA32C6:00_06CB:CE7D_Touchpad" {
 #        dwt enabled
-        middle_emulation enabled
-        accel_profile "adaptive"
-        pointer_accel 0.1
-        natural_scroll enabled
+    middle_emulation enabled
+    accel_profile "adaptive"
+    pointer_accel -0.3
+    natural_scroll enabled
 }
 
 input "1739:52861:SYNA32C6:00_06CB:CE7D_Mouse" {
-        accel_profile "flat"
-        pointer_accel 1.0
-        natural_scroll enabled
+    accel_profile "flat"
+    pointer_accel -1.0
+    natural_scroll enabled
 }
 
+input "2362:9488:PixArt_USB_Optical_Mouse" {
+    accel_profile "flat"
+    pointer_accel -0.3
+# natural_scroll enabled
+}
+input "6127:24717:PixArt_Lenovo_USB_Optical_Mouse" {
+    accel_profile "flat"
+    pointer_accel -0.3
+}
 ### Key bindings
 #
 # Basics:
@@ -200,28 +211,28 @@ bindsym $mod+minus scratchpad show
 # Resizing containers:
 #
 
-seat seat0 xcursor_theme $theme 24
+seat seat0 xcursor_theme $theme 32
 
-exec {
-  env XCURSOR_THEME=$theme
-  env XCURSOR_SIZE=24
-}
+# exec {
+# env XCURSOR_THEME=$theme
+# env XCURSOR_SIZE=24
+# }
 
 mode "resize" {
-        bindsym $left resize shrink width 10px
-        bindsym $down resize grow height 10px
-        bindsym $up resize shrink height 10px
-        bindsym $right resize grow width 10px
+  bindsym $left resize shrink width 10px
+    bindsym $down resize grow height 10px
+    bindsym $up resize shrink height 10px
+    bindsym $right resize grow width 10px
 
 # Ditto, with arrow keys
-        bindsym Left resize shrink width 10px
-        bindsym Down resize grow height 10px
-        bindsym Up resize shrink height 10px
-        bindsym Right resize grow width 10px
+    bindsym Left resize shrink width 10px
+    bindsym Down resize grow height 10px
+    bindsym Up resize shrink height 10px
+    bindsym Right resize grow width 10px
 
 # Return to default mode
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
 
