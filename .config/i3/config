@@ -1,6 +1,8 @@
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
+exec --no-startup-id nitrogen --restore
+exec --no-startup-id xrandr --output eDP-1 --scale 0.5x0.5
 
 # enable tapping and enable natural scrolling
 exec --no-startup-id xinput set-prop "SYNA32C6:00 06CB:CE7D Touchpad" "libinput Tapping Enabled" 1
@@ -22,8 +24,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id  brightnessctl s 10%- && $ref
 bindsym XF86MonBrightnessUp exec --no-startup-id  brightnessctl s +10% && $refresh_i3status
 
 # have keybinds for screenshots here
-bindsym $super+p exec --no-startup-id maim | xclip -selection clipboard -t image/png
-# bindsym  exec --no-startup-id maim -g $(slop) | xclip -selection clipboard -t image/png
+bindsym $super+p exec --no-startup-id maim -g $(slop) | xclip -selection clipboard -t image/png
 
 set $up k
 set $down j
