@@ -14,7 +14,7 @@ style.shape = "Block"
 style.blinking = "Never"
 
 [font]
-normal.family = "JetBrainsMono NFM"
+normal.family = "Iosevka NFM"
 size = 10.0
 offset.x = 0
 offset.y = 1

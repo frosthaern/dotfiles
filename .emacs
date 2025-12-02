@@ -25,8 +25,8 @@
  '(line-number-mode t)
  '(package-selected-packages
    '(cape cider clojure-mode cmake-mode corfu drag-stuff eglot go-mode
-	  gruvbox-theme hl-todo magit multiple-cursors rust-mode
-	  undo-tree yaml-mode)))
+	  gruvbox-theme magit multiple-cursors rust-mode undo-tree
+	  yaml-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -138,7 +138,6 @@
   :init
   (global-corfu-mode))
 
-
 (use-package cape
   :ensure t
   :after corfu
@@ -161,40 +160,12 @@
 (use-package rust-mode
   :ensure t)
 
-(use-package go-mode
-  :ensure t)
-
-(use-package clojure-mode
-  :ensure t)
-
-(use-package cider
-  :ensure t)
-
 (use-package haskell-mode
   :ensure t
   :hook (haskell-mode . eglot-ensure))
 
 (use-package multiple-cursors
   :ensure t)
-
-(use-package hl-todo
-  :ensure t
-  :config
-  ;; Enable hl-todo globally
-  (global-hl-todo-mode 1)
-
-  ;; Customize keywords and colors
-  (setq hl-todo-keyword-faces
-        '(("TODO" . "#FF0000")
-          ("FIXME" . "#FF0000")
-          ("DEBUG" . "#A020F0")
-          ("GOTCHA" . "#FF4500")
-          ("STUB" . "#1E90FF")))
-  (keymap-set hl-todo-mode-map "C-c n" #'hl-todo-next)
-  (keymap-set hl-todo-mode-map "C-c p" #'hl-todo-previous)
-  (keymap-set hl-todo-mode-map "C-c o" #'hl-todo-occur)
-  (keymap-set hl-todo-mode-map "C-c i" #'hl-todo-insert))
-
 
 ;; personal functions
 (defun copy-buffer ()

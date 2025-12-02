@@ -43,6 +43,7 @@ set colorcolumn=100
 set showmode
 set completeopt=menu,menuone,noselect
 set foldmethod=syntax
+set foldlevelstart=99
 set ttyfast
 
 call plug#begin()
