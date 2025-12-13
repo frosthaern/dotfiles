@@ -34,7 +34,9 @@
  ;; If there is more than one, they won't work right.
  '(flymake-error ((t nil)))
  '(flymake-note ((t nil)))
- '(flymake-warning ((t nil))))
+ '(flymake-warning ((t nil)))
+ '(flymake-warning-echo ((t nil))))
+
 
 (tool-bar-mode -1)
 (server-start)
@@ -46,13 +48,16 @@
 (global-font-lock-mode 1)
 (column-number-mode t)
 (toggle-truncate-lines t)
-(set-face-attribute 'default nil :family "Iosevka Fixed SemiBold" :height 130 :slant 'normal)
+(set-face-attribute 'default nil :family "Iosevka NFM" :height 130 :slant 'normal)
 (electric-pair-mode t)
+(setq flymake-fringe-indicator-position nil)
+
 
 (setq undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo")))
 
 
 (keymap-global-set "C-c c" 'compile)
+(keymap-global-set "C-c f" 'flymake-mode)
 (keymap-global-set "M-j" 'windmove-down)
 (keymap-global-set "M-l" 'windmove-right)
 (keymap-global-set "M-h" 'windmove-left)
@@ -67,7 +72,6 @@
 (keymap-global-set "M-<f4>" 'find-file)
 (keymap-global-set "M-<f6>" 'dired)
 (keymap-global-set "C-x C-a" 'copy-buffer)
-
 
 ;; Make sure to cursor-shit package is installed
 (keymap-global-set "C->"  'mc/mark-next-like-this)

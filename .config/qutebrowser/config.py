@@ -5,10 +5,12 @@ config.load_autoconfig()
 pywalQute.draw.color(c, {
     'spacing': {
         'vertical': 6,
-        'horizontal': 8,
+        'horizontal': 8
     }
 })
 
+
+config.load_autoconfig()
 c.fonts.default_family = ["JetBrainsMono Nerd Font Mono Bold"]
 c.fonts.default_size = "13pt"
 c.fonts.completion.category = 'bold 10pt JetBrainsMono Nerd Font Mono'

@@ -22,7 +22,7 @@ set $up k
 set $right l
 set $term alacritty
 set $menu rofi -show drun
-set $theme default 
+set $theme default
 output eDP-1 scale 2
 
 # setting font
@@ -77,7 +77,7 @@ input "1739:52861:SYNA32C6:00_06CB:CE7D_Mouse" {
 
 input "2362:9488:PixArt_USB_Optical_Mouse" {
     accel_profile "flat"
-    pointer_accel -0.3
+    pointer_accel -0.1
 # natural_scroll enabled
 }
 input "6127:24717:PixArt_Lenovo_USB_Optical_Mouse" {
@@ -97,7 +97,7 @@ bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
 bindsym XF86MonBrightnessUp exec brightnessctl s +10%
 
 # screenshots
-bindsym $mod+Shift+p exec grim - | wl-copy && wl-paste | cliphist store
+bindsym $mod+m exec grim - | wl-copy && wl-paste | cliphist store
 bindsym $mod+p exec grim -g "$(slurp -d)" - | wl-copy && wl-paste | cliphist store
 
 # copy pasta cliphist
@@ -211,7 +211,7 @@ bindsym $mod+minus scratchpad show
 # Resizing containers:
 #
 
-seat seat0 xcursor_theme $theme 32
+seat seat0 xcursor_theme $theme 64
 
 # exec {
 # env XCURSOR_THEME=$theme
