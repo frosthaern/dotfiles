@@ -1,4 +1,3 @@
-#
 # ~/.bashrc
 #
 
@@ -24,22 +23,11 @@ PS1='[\u@\h \W]\$ '
 # It's from LibreOffice
 # soffice --headless --convert-to pdf *.docx
 
-export EDITOR="nvim"
 export XDG_CONFIG_HOME="$HOME/.config"
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$HOME/.cargo/bin:$PATH"
-export PATH="$HOME/.cargo/env:$PATH"
-export PATH="$HOME/.config/scripts:$PATH"
-export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="$HOME/.local/share/:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/.zfunc/:$PATH"
 export JAVA_HOME="/usr/lib/jvm/default"
 export PATH="$JAVA_HOME/bin:$PATH"
-export NVM_DIR="$HOME/.config/nvm"
-export WEZTERM_GUI_BACKEND="wayland"
-export WALLPAPER_DIR='/home/shashank/Pictures/Wallpapers'
-export TERM='kitty'
 
 # Aliases
 alias grep='grep --color=auto'
@@ -117,8 +105,6 @@ recv() {
     curl https://0x0.st/$1 -o $2
 }
 
-. "$HOME/.cargo/env"
-# eval "$(starship init bash)"
-
 # Evaluate zoxide initialization
 eval "$(zoxide init bash)"
+. "$HOME/.cargo/env"

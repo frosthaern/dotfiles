@@ -24,9 +24,8 @@
  '(ido-use-virtual-buffers 'auto)
  '(line-number-mode t)
  '(package-selected-packages
-   '(cape cider clojure-mode cmake-mode corfu drag-stuff eglot go-mode
-	  gruvbox-theme magit multiple-cursors rust-mode undo-tree
-	  yaml-mode)))
+   '(cape corfu drag-stuff gruber-darker-theme haskell-mode magit
+	  multiple-cursors rust-mode undo-tree)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -37,9 +36,15 @@
  '(flymake-warning ((t nil)))
  '(flymake-warning-echo ((t nil))))
 
+;; installing font
+(unless (package-installed-p 'gruber-darker-theme)
+  (package-install 'gruber-darker-theme))
+
+(require 'server)
+(unless (server-running-p)
+  (server-start))
 
 (tool-bar-mode -1)
-(server-start)
 (scroll-bar-mode -1)
 (menu-bar-mode -1)
 (show-paren-mode 1)
@@ -48,7 +53,7 @@
 (global-font-lock-mode 1)
 (column-number-mode t)
 (toggle-truncate-lines t)
-(set-face-attribute 'default nil :family "Iosevka NFM" :height 130 :slant 'normal)
+(set-face-attribute 'default nil :family "Iosevka NFM" :height 130 :slant 'normal :weight 'semibold)
 (electric-pair-mode t)
 (setq flymake-fringe-indicator-position nil)
 

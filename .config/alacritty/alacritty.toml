@@ -15,6 +15,7 @@ style.blinking = "Never"
 
 [font]
 normal.family = "Iosevka NFM"
-size = 10.0
+normal.style = "Medium"
+size = 15.0
 offset.x = 0
 offset.y = 1

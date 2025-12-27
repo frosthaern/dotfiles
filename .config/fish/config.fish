@@ -41,7 +41,6 @@ set -gx PATH "$HOME/Codey/pass-rs/target/release" $PATH
 set -gx PATH "$HOME/Code/suburl_crawler_py" $PATH
 set -gx PATH "$JAVA_HOME/bin" $PATH
 set -gx PATH "$HOME/Apps" $PATH
-set -gx PATH "$HOME/.pyenv/bin" $PATH
 
 set fish_vi_force_cursor 1
 set fish_cursor_insert "block"
@@ -129,5 +128,3 @@ set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME ; se
 # This section can be safely removed at any time if needed.
 test -r '/home/shashank/.opam/opam-init/init.fish' && source '/home/shashank/.opam/opam-init/init.fish' > /dev/null 2> /dev/null; or true
 # END opam configuration
-
-status is-interactive; and source (pyenv init -|psub)
