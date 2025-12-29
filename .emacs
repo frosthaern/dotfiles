@@ -53,7 +53,7 @@
 (global-font-lock-mode 1)
 (column-number-mode t)
 (toggle-truncate-lines t)
-(set-face-attribute 'default nil :family "Iosevka NFM" :height 130 :slant 'normal :weight 'semibold)
+(set-face-attribute 'default nil :family "JetBrainsMono NFM" :height 130 :slant 'normal :weight 'semibold)
 (electric-pair-mode t)
 (setq flymake-fringe-indicator-position nil)
 
