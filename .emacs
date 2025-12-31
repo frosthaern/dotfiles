@@ -53,15 +53,13 @@
 (global-font-lock-mode 1)
 (column-number-mode t)
 (toggle-truncate-lines t)
-(set-face-attribute 'default nil :family "JetBrainsMono NFM" :height 130 :slant 'normal :weight 'semibold)
+(set-face-attribute 'default nil :family "JetBrainsMono NFM" :height 110 :slant 'normal :weight 'semibold)
 (electric-pair-mode t)
 (setq flymake-fringe-indicator-position nil)
 
 
 (setq undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo")))
 
-
-(keymap-global-set "C-c c" 'compile)
 (keymap-global-set "C-c f" 'flymake-mode)
 (keymap-global-set "M-j" 'windmove-down)
 (keymap-global-set "M-l" 'windmove-right)
@@ -70,12 +68,6 @@
 (keymap-global-set "C--" 'text-scale-decrease)
 (keymap-global-set "C-+" 'text-scale-increase)
 (keymap-global-set "C-q" 'duplicate-line)
-(keymap-global-set "C-%" 'make-empty-file)
-(keymap-global-set "M-<f1>" 'delete-other-windows)
-(keymap-global-set "M-<f2>" 'split-window-below)
-(keymap-global-set "M-<f3>" 'split-window-right)
-(keymap-global-set "M-<f4>" 'find-file)
-(keymap-global-set "M-<f6>" 'dired)
 (keymap-global-set "C-x C-a" 'copy-buffer)
 
 ;; Make sure to cursor-shit package is installed
@@ -85,8 +77,6 @@
 (keymap-global-set "C-,"  'mc/skip-to-previous-like-this)
 (keymap-global-set "C-{"  'mc/mark-previous-lines)
 (keymap-global-set "C-}"  'mc/mark-next-lines)
-
-
 
 (add-hook 'org-mode-hook
           (lambda ()
@@ -141,7 +131,6 @@
 (use-package corfu
   :ensure t
   :custom
-  (corfu-auto nil)                  ; Enable auto completion popup
   (corfu-auto-delay 0.2)            ; Set delay before popup shows
   (corfu-auto-prefix 2)             ; Minimum prefix length
   :init
