@@ -53,7 +53,7 @@
 (global-font-lock-mode 1)
 (column-number-mode t)
 (toggle-truncate-lines t)
-(set-face-attribute 'default nil :family "JetBrainsMono NFM" :height 110 :slant 'normal :weight 'semibold)
+(set-face-attribute 'default nil :family "FiraCode Nerd Font Mono SemBd" :height 110 :slant 'normal :weight 'semibold)
 (electric-pair-mode t)
 (setq flymake-fringe-indicator-position nil)
 
@@ -61,6 +61,7 @@
 (setq undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo")))
 
 (keymap-global-set "C-c f" 'flymake-mode)
+(keymap-global-set "C-c c" 'compile)
 (keymap-global-set "M-j" 'windmove-down)
 (keymap-global-set "M-l" 'windmove-right)
 (keymap-global-set "M-h" 'windmove-left)

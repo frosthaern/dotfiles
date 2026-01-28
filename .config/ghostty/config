@@ -1,15 +1,3 @@
-# themes and looks
-font-family = "Iosevka Fixed Semibold"
-font-size = 24
-theme = Gruber Darker
+font-family = FiraCode Nerd Font Mono SemBd
+font-size = 10
 
-# keybindings
-config-file = keybinding/config
-
-# misc
-shell-integration = none
-cursor-style = block
-
-# looks
-window-padding-x = 10
-window-padding-y = 10

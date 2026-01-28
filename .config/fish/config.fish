@@ -17,10 +17,9 @@ set -gx PS1 '[\u@\h \W]\$ '
 set -gx EDITOR "vim"
 set -gx XDG_CONFIG_HOME "$HOME/.config"
 set -gx BUN_INSTALL "$HOME/.bun"
-set -gx JAVA_HOME "/usr/lib/jvm/default"
+set -gx JAVA_HOME "/usr/lib/jvm/java-25-openjdk"
 set -gx NVM_DIR "$HOME/.config/nvm"
 set -gx WALLPAPER_DIR "$HOME/Pictures/Wallpapers"
-set -gx JAVA_HOME (dirname (dirname (readlink -f (which java))))
 
 # find "$BACKUP_DIR" -type f -name "*.zip" -mtime +7 -delete
 # this is to delete everything except the last lines
